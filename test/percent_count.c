@@ -5,7 +5,7 @@ int		percent_count(const char  *str)
 
 	i = 0;
 	count = 0;
-	while (str)
+	while (str[i])
 	{
 		if (str[i] == '%')
 			count++;

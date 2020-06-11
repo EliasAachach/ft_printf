@@ -13,7 +13,25 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
-int ft_printf(char *str, ...)
+#include <unistd.h>
+
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
+int 	ft_printf(const char *str, ...)
 {
 	int	i = 0;
 	va_list puet;
@@ -22,11 +40,11 @@ int ft_printf(char *str, ...)
 	while (str[i])
 	{
 		if (str[i] != '%')
-			printf("%c", str[i]);
+			ft_putchar(str[i]);
 		else
 		{
 			string = va_arg(puet, char *);
-			printf("%s", string);
+			ft_putstr(string);
 			i++;
 		}
 		i++;
@@ -36,6 +54,6 @@ int ft_printf(char *str, ...)
 
 int	main(void)
 {
-	ft_printf("Salut %s comment %s", "Elias", "ca va");
+	ft_printf("Salut %s comment %s", "mon pote", "ca va");
 	return(0);
 }
