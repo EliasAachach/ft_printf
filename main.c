@@ -4,6 +4,7 @@ int ft_printf(const char *str, ...)
 {
 	int i;
 	va_list	arg;
+	t_ptf ptf;
 
 	i = 0;
 	ptf.total_len = 0
@@ -12,12 +13,11 @@ int ft_printf(const char *str, ...)
 	{
 		if (str[i] != '%')
 		{
-			ft_putchar(str[i])
-			ptf.total_len++;
+			ptf.total_len += ft_putchar(str[i]);
 		}
 		else
 		{
-			parsing(arg);
+			parsing(str, &(ptf.total_len));
 		}
 		i++;
 	}
