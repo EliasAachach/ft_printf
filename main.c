@@ -17,7 +17,7 @@ int ft_printf(const char *str, ...)
 		}
 		else
 		{
-			parsing(va_arg(arg, char*));
+			parsing(arg);
 		}
 		i++;
 	}

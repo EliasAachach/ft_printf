@@ -9,7 +9,8 @@ int		check_convert(char *str)
 	{
 		if (str[i + 1] == 'c')
 		{
-			ft_itoa(/*ARG*/);
+			ft_putchar(va_arg(arg, int) + 48);
+			// incrementation de la taille totale
 		}
 		if (str[i + 1] == 's')
 		{
