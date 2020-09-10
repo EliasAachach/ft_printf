@@ -19,23 +19,22 @@ int		check_convert(char *str)
 	}
 	else if (str[i + 1] == 'd' || str[i + 1] == 'i')
 	{
-		//need to check the precision
-		ft_putnbr_fd(/*ARG*/, 1);
+		ft_putnbr(va_arg(arg, int), &(ptf->total_len));
 	}
 	else if (str[i + 1] == 'u')
 	{
-		//FAIRE UN AUTRE BAIL
+		ft_putnbr_ui((unsigned int)va_arg(arg, int), &(ptf->total_len));
 	}
 	else if (str[i + 1] == 'x')
 	{
-		//FAIRE UN AUTRE BAIL
+		ptf->total_len = ft_convert_hexa((unsigned int)va_arg(arg, int), 0);
 	}
 	else if (str[i + 1] == 'X')
 	{
-		//FAIRE UN AUTRE BAIL
+		ptf->total_len = ft_convert_hexa((unsigned int)va_arg(arg, int), 1);
 	}
 	else if (str[i + 1] == '%')
 	{
-		//FAIRE UN AUTRE BAIL
+		ptf->total_len += ft_putchar('%');
 	}
 }
