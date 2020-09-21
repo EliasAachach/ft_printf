@@ -15,7 +15,7 @@ int		check_convert(char *str)
 	}
 	else if (str[i + 1] == 'p')
 	{
-		//FAIRE UN AUTRE BAIL
+		ptf->total-len = ft_putmem((va_arg(arg, void *)));
 	}
 	else if (str[i + 1] == 'd' || str[i + 1] == 'i')
 	{

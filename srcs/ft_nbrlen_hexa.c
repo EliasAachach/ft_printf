@@ -6,11 +6,6 @@ int ft_nbrlen_hexa(unsigned int nbr)
 	unsigned int n;
 
 	len = 0;
-	if (nbr < 0)
-	{
-		len++;
-		n = -nbr;
-	}
 	n = nbr;
 	if (nbr == 0)
 		return (1);

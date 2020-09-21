@@ -39,11 +39,6 @@ int		ft_convert_hexa(unsigned int nbr, int maj)
 		return (-1);
 	nbr_final[final_len] = '\0';
 	final_len--;
-	if (nbr < 0)
-	{
-		nbr = -nbr;
-		nbr_final[0] = '-';
-	}
 	if (nbr < 16)
 	{
 		convert_stock(nbr, maj, nbr_final, final_len);
@@ -55,7 +50,7 @@ int		ft_convert_hexa(unsigned int nbr, int maj)
 		r = nbr % 16;
 		convert_stock(r, maj, nbr_final, final_len);
 		final_len--;
-		while (q > 16)
+		while (q >= 16)
 		{
 			tmp = q;
 			q = tmp / 16;

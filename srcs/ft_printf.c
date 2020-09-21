@@ -17,7 +17,9 @@ int ft_printf(const char *str, ...)
 			ptf.total_len += ft_putstr(str);
 	}
 	if (ptf.total_len == 0)
+	{
 		parsing(str, &(ptf.total_len));
+	}
 	va_end(arg);
 	return (ptf.total_len);
 }
