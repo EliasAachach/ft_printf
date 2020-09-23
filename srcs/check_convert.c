@@ -7,7 +7,7 @@ int		check_convert(char *str)
 		return (0);
 	if (str[i + 1] == 'c')
 	{
-		ptf->total_len += ft_putchar(va_arg(arg, char) + 48);
+		ptf->total_len += ft_putchar(va_arg(arg, char));
 	}
 	else if (str[i + 1] == 's')
 	{
@@ -15,7 +15,7 @@ int		check_convert(char *str)
 	}
 	else if (str[i + 1] == 'p')
 	{
-		ptf->total-len = ft_putmem((va_arg(arg, void *)));
+		ptf->total-len += ft_putmem((va_arg(arg, void *)));
 	}
 	else if (str[i + 1] == 'd' || str[i + 1] == 'i')
 	{
@@ -27,11 +27,11 @@ int		check_convert(char *str)
 	}
 	else if (str[i + 1] == 'x')
 	{
-		ptf->total_len = ft_convert_hexa((unsigned int)va_arg(arg, int), 0);
+		ptf->total_len += if (ft_convert_hexa((unsigned int)va_arg(arg, int), 0) == -1)
 	}
 	else if (str[i + 1] == 'X')
 	{
-		ptf->total_len = ft_convert_hexa((unsigned int)va_arg(arg, int), 1);
+		ptf->total_len += ft_convert_hexa((unsigned int)va_arg(arg, int), 1);
 	}
 	else if (str[i + 1] == '%')
 	{
