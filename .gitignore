@@ -1,0 +1,6 @@
+.vscode/launch.json
+.vscode/settings.json
+**/*.o
+**/*.a
+**/*.swp
+**/.DS_Store
