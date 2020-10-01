@@ -2,5 +2,5 @@
 
 int main()
 {
-	printf("%soui", "50");
+	printf("%s", NULL);
 }

@@ -5,6 +5,11 @@ int ft_putstr(char *str)
 	int i;
 
 	i = 0;
+	if (str == NULL)
+	{
+		i = ft_putstr("(null)");
+		return (i);
+	}
 	while (str[i])
 	{
 		ft_putchar(str[i]);
