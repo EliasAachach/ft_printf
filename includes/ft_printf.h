@@ -4,7 +4,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-#define CONVERSION "cspdiuxX%"
+#define TRUE 1
+#define FALSE 0
 
 typedef struct 	s_ptf
 {
