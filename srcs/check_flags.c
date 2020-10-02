@@ -1,17 +1,17 @@
 #include "ft_printf.h"
 
 int		check_flag(const char
-*str, int len, int i)
+*str, int len)
 {
-	int y;
+	int i;
 
-	y = i;
-	while (str[y])
+	i = 0;
+	while (str[i])
 	{
-		if (str[y] == '-')
+		if (str[i] == '-')
 		{
 			//FAIRE UN BAIL
 		}
-		y++;
+		i++;
 	}
 }
