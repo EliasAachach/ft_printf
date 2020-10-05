@@ -2,5 +2,5 @@
 
 int main ()
 {
-	printf("%6s", "oui");
+	printf("%0*d", 'a', 7);
 }

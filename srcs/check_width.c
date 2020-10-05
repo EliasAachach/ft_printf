@@ -21,10 +21,9 @@ int	check_width(const char *str)
 		{
 			width = va_arg(arg, int);
 		}
-		while (str[i] >= '0' && str[i] <= '9')
+		if (str[i] >= '0' && str[i] <= '9')
 		{
-			width +=ft_atoi(str[i]);
-			i++;
+			width = ft_atoi(str);
 		}
 		i++;
 	}
