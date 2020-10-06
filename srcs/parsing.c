@@ -2,9 +2,14 @@
 
 int parsing(const char *str,   int len)
 {
-	check_flag(str);
-	check_width(str);
-	check_precision(str);
-	check_convert(str);
+	int right;
+	int prec;
+	int	width;
+	int zero;
+
+	check_flag(str, right);
+	check_width(str, width, zero);
+	check_precision(str, prec);
+	check_convert(str, right, width, zero, prec);
 	return (len);
 }

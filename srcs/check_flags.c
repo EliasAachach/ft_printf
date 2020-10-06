@@ -1,7 +1,6 @@
 #include "ft_printf.h"
 
-int		check_flag(const char
-*str, int len)
+int		check_flag(const char	*str, int len)
 {
 	int i;
 	int right;
