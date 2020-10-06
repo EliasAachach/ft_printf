@@ -7,6 +7,10 @@ int parsing(const char *str,   int len)
 	int	width;
 	int zero;
 
+	right = 0;
+	prec = 0;
+	width = 0;
+	zero = 0;
 	check_flag(str, right);
 	check_width(str, width, zero);
 	check_precision(str, prec);

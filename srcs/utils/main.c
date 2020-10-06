@@ -2,5 +2,5 @@
 
 int main ()
 {
-	printf("%0*d", 'a', 7);
+	printf("%0d", 7);
 }

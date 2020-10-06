@@ -1,16 +1,10 @@
 int		check_convert(char *str)
 {
 	int i;
-
 	i = 0;
+
 	if (!str)
 		return (0);
-	// GESTION DES FLAGS
-	if (right = TRUE)
-	{
-		//FAIRE UN BAIL
-	}
-	if (width)
 	if (str[i + 1] == 'c')
 	{
 		ptf->total_len += ft_putchar(va_arg(arg, char));
