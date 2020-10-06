@@ -11,6 +11,14 @@ int		check_precision(char *str, int len)
 	{
 		if (str[i] == '.')
 		{
+			if (str[i + 1] == '*')
+			{
+				prec = va_arg(arg, int);
+			}
+			else
+			{
+				prec = ft_atoi(str + i);
+			}
 			prec = TRUE;
 		}
 		i++;

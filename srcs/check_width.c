@@ -23,7 +23,7 @@ int	check_width(const char *str)
 		}
 		if (str[i] >= '0' && str[i] <= '9')
 		{
-			width = ft_atoi(str);
+			width = ft_atoi(str + i);
 		}
 		i++;
 	}

@@ -6,18 +6,30 @@ int		check_convert(char *str)
 	if (!str)
 		return (0);
 	// GESTION DES FLAGS
-	if (right = TRUE)
+	if (right == TRUE)
 	{
 		//FAIRE UN BAIL
 	}
-	if (width)
+	if(prec == TRUE)
+	{
+		//FAIRE UN AUTRE BAIL
+	}
+	if (width > 0)
+	{
+		//peut etre un autre bail
+		if (zero == TRUE)
+		{
+			//dans affihage, changer ' ' en '0'
+		}
+	}
+	//FIN
 	if (str[i + 1] == 'c')
 	{
 		ptf->total_len += ft_putchar(va_arg(arg, char));
 	}
 	else if (str[i + 1] == 's')
 	{
-		ptf->total_len += ft_putstr(va_arg(arg, char *), 1);
+		ptf->total_len += ft_putstr(via_arg(arg, char *), prec);
 	}
 	else if (str[i + 1] == 'p')
 	{
