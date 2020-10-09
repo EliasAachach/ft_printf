@@ -4,18 +4,16 @@ int	check_width(const char *str)
 {
 	int i;
 	int width;
-	int zero;
+	char zero;
 
 	i = 0;
 	width = 0;
-	zero = FALSE;
+	zero = ' ';
 	while (str[i])
 	{
 		if (str[i] == '0')
 		{
-			zero = TRUE;
-			//DIRE QUE SI ZERO EST TRUE ALORS ON PUTCHAR '0' AU
-			//LIEU DE PUTCHAR ' '
+			zero = '0';
 		}
 		if (str[i] == '*')
 		{

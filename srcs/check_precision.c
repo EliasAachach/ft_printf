@@ -19,7 +19,6 @@ int		check_precision(char *str, int len)
 			{
 				prec = ft_atoi(str + i);
 			}
-			prec = TRUE;
 		}
 		i++;
 	}

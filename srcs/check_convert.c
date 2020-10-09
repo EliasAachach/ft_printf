@@ -29,7 +29,8 @@ int		check_convert(char *str)
 	}
 	else if (str[i + 1] == 's')
 	{
-		ptf->total_len += ft_putstr(via_arg(arg, char *), prec);
+		ptf->total_len += ft_putstr(via_arg(arg, char *), prec,
+		zero);
 	}
 	else if (str[i + 1] == 'p')
 	{
