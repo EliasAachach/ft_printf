@@ -17,7 +17,7 @@ int		check_convert(char *str)
 	if (width > 0)
 	{
 		//peut etre un autre bail
-		if (zero == TRUE)
+		if (zero_space == TRUE)
 		{
 			//dans affihage, changer ' ' en '0'
 		}
@@ -30,7 +30,7 @@ int		check_convert(char *str)
 	else if (str[i + 1] == 's')
 	{
 		ptf->total_len += ft_putstr(via_arg(arg, char *), prec,
-		zero);
+		zero_space, right);
 	}
 	else if (str[i + 1] == 'p')
 	{

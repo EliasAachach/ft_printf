@@ -4,16 +4,16 @@ int	check_width(const char *str)
 {
 	int i;
 	int width;
-	char zero;
+	char zero_space;
 
 	i = 0;
 	width = 0;
-	zero = ' ';
+	zero_space = ' ';
 	while (str[i])
 	{
 		if (str[i] == '0')
 		{
-			zero = '0';
+			zero_space = '0';
 		}
 		if (str[i] == '*')
 		{
@@ -27,5 +27,5 @@ int	check_width(const char *str)
 	}
 			//WIDTH - LEN DE CE QUI EST ECRIT = NBR DE ' ' A
 			//ECRIRE
-	return (zero, width)
+	return (zero_space, width)
 }
