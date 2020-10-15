@@ -10,7 +10,7 @@ int ft_putstr(char *str, int prec, char
 	y = 0;
 	if (str == NULL)
 	{
-		i = ft_putstr("(null)", prec);
+		i = ft_putstr("(null)", prec, zero);
 		return (i);
 	}
 	while (ft_strlen(str) < width && y
