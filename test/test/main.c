@@ -2,5 +2,5 @@
 
 int main()
 {
-	printf("%4s", "oui");
+	printf("%4c", "oui");
 }
