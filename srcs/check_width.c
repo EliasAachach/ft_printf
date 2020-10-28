@@ -3,6 +3,7 @@
 int	check_width(const char *str)
 {
 	int i;
+	char check_width[3];
 	int width;
 	char zero_space;
 
