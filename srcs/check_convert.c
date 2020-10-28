@@ -1,6 +1,7 @@
 int		check_convert(char *str)
 {
 	int i;
+	char one_char[1];
 
 	i = 0;
 	if (!str)
@@ -25,11 +26,12 @@ int		check_convert(char *str)
 	//FIN
 	if (str[i + 1] == 'c')
 	{
-		ptf->total_len += ft_putchar(va_arg(arg, char));
+		one_char[1] = va_arg(arg, char);
+		ptf->total_len += ft_putstr(one_char);
 	}
 	else if (str[i + 1] == 's')
 	{
-		ptf->total_len += ft_putstr(via_arg(arg, char *), prec,
+		ptf->total_len += ft_putstr(va_arg(arg, char *), prec,
 		zero_space, right);
 	}
 	else if (str[i + 1] == 'p')
