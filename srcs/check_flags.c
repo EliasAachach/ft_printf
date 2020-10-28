@@ -15,4 +15,5 @@ int		check_flag(const char	*str, int len)
 		}
 		i++;
 	}
+	return (right);
 }

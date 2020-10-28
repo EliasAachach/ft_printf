@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int		check_precision(char *str, int len)
+int		check_precision(char *str)
 {
 	int i;
 	int prec;
@@ -22,5 +22,5 @@ int		check_precision(char *str, int len)
 		}
 		i++;
 	}
-	return (len)
+	return (prec);
 }

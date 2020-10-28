@@ -1,6 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-	printf("%0c", 'a');
+	char str[2];
+	
+	str[0] = 'a';
+	printf("%lu", strlen(str));
+	printf("%s", str);
 }
