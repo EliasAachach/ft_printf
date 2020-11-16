@@ -1,26 +1,26 @@
 #include "ft_printf.h"
 
-int		check_precision(char *str)
+t_var		check_precision(char *str,
+t_var var)
 {
 	int i;
-	int prec;
 
 	i = 0;
-	prec = FALSE;
+	var.prec = FALSE;
 	while (str[i])
 	{
 		if (str[i] == '.')
 		{
 			if (str[i + 1] == '*')
 			{
-				prec = va_arg(arg, int);
+				var.prec = va_arg(arg, int);
 			}
 			else
 			{
-				prec = ft_atoi(str + i);
+				var.prec = ft_atoi(str + i);
 			}
 		}
 		i++;
 	}
-	return (prec);
+	return (var);
 }

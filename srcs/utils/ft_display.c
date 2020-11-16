@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int ft_putstr(char *str, int prec, char
+int ft_display(char *str, int prec, char
 	zero_space, int right)
 {
 	int i;
@@ -10,7 +10,7 @@ int ft_putstr(char *str, int prec, char
 	y = 0;
 	if (str == NULL)
 	{
-		i = ft_putstr("(null)", prec,
+		i = ft_display("(null)", prec,
 		zero_space, right);
 		return (i);
 	}

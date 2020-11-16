@@ -1,19 +1,18 @@
 #include "ft_printf.h"
 
-int		check_flag(const char	*str, int len)
+t_var	check_flag(const char	*str, t_var var)
 {
 	int i;
-	int right;
 
-	right = FALSE;
+	var.right = FALSE;
 	i = 0;
 	while (str[i])
 	{
 		if (str[i] == '-')
 		{
-			right = TRUE;
+			var.right = TRUE;
 		}
 		i++;
 	}
-	return (right);
+	return (var);
 }
