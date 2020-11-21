@@ -1,7 +1,6 @@
 #include "ft_printf.h"
 
-int ft_display(char *str, int prec, char
-	zero_space, int right)
+int ft_display(char *str, t_var var)
 {
 	int i;
 	int y;
@@ -10,26 +9,25 @@ int ft_display(char *str, int prec, char
 	y = 0;
 	if (str == NULL)
 	{
-		i = ft_display("(null)", prec,
-		zero_space, right);
+		i = ft_display("(null)", var);
 		return (i);
 	}
-	while (ft_strlen(str) < width && y
-	<= width)
+	while (ft_strlen(str) < var.width && y
+	<= var.width)
 	{
-		ft_putchar(zero_space);
+		ft_putchar(var.zero_space);
 		y++;
 	}
-	while (str[i] || i <= prec)
+	while (str[i] || i <= var.prec)
 	{
 		ft_putchar(str[i]);
 		i++;
 	}
-	if (right == TRUE)
+	if (var.right == TRUE)
 	{
-		while (i < width)
+		while (i < var.width)
 		{
-			ft_putchar(zero_space);
+			ft_putchar(var.zero_space);
 			i++;
 		}
 	}

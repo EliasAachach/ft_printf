@@ -3,26 +3,45 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdarg.h>
 
 #define TRUE 1
 #define FALSE 0
 #define WIDTH 0
 #define ZERO_SPACE 1
 
-typedef struct 	s_ptf
+typedef struct s_var
 {
-	int i;
-	int j;
-	int k;
-	int count_arg;
+	int right;
+	int prec;
+	int width;
+	int zero_space;
 	int total_len;
-}				t_ptf;
+	int	conv;
+}				t_var;
+
+t_var	parsing(const	char	*str, t_var	var, va_list arg);
+t_var	check_convert(char	*str, t_var
+var, va_list arg);
+t_var	check_flags(const	char	*str,
+t_var	var);
+t_var	check_precision(char	*str,
+t_var	var);
+t_var	check_width(const	char	*str,
+t_var	var);
+t_var	wich_convert(char	*str, t_var
+var);
+int		ft_printf(const	char	*str,
+...);
 int		ft_convert_hexa(unsigned int nbr, int maj);
 int		ft_nbrlen_hexa(unsigned int nbr);
-int		ft_putchar(char c);
-int		ft_putmem(void *addr);
+int		ft_putchar(char	c);
+int		ft_putmem(void	*addr);
+int		ft_putstr(char	*str);
+int		ft_atoi(const	char	*str);
+int		ft_display(char	*str, t_var var);
+int		ft_strlen(char	*str);
 void	ft_putnbr(int nbr, int *len);
 void	ft_putnbr_ui(unsigned int nbr, int *len);
-int		ft_putstr(char *str);
 
 #endif

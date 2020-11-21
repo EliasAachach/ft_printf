@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mdavid <mdavid@student.42.fr>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/08/13 19:04:13 by bemoreau          #+#    #+#              #
-#    Updated: 2020/07/06 23:10:44 by mdavid           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libftprintf.a
 INCLUDE =	ft_printf.h
 
@@ -18,9 +6,22 @@ INC_PATH = ./includes/
 vpath %.c srcs
 vpath %.c srcs/utils
 
-FILES =		./srcs/ft_convert_hexa\
-			./srcs/ft_nbrlen_hexa\
-			./srcs/ft_putmem
+FILES =		./srcs/ft_printf\
+			./srcs/parsing\
+			./srcs/check_convert\
+			./srcs/check_precision\
+			./srcs/check_flags\
+			./srcs/check_width\
+			./srcs/wich_convert\
+			./srcs/utils/ft_atoi\
+			./srcs/utils/ft_convert_hexa\
+			./srcs/utils/ft_display\
+			./srcs/utils/ft_nbrlen_hexa\
+			./srcs/utils/ft_putchar\
+			./srcs/utils/ft_putmem\
+			./srcs/utils/ft_putnbr\
+			./srcs/utils/ft_putnbr_ui\
+			./srcs/utils/ft_strlen\
 
 SRCS = $(addsuffix .c, $(FILES))
 OBJ = $(SRCS:.c=.o)

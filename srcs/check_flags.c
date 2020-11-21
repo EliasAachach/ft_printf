@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-t_var	check_flag(const char	*str, t_var var)
+t_var	check_flags(const char	*str, t_var var)
 {
 	int i;
 

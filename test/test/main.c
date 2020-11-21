@@ -1,11 +1,32 @@
+#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 
-int main()
+typedef struct	s_var
 {
-	char str[2];
-	
-	str[0] = 'a';
-	printf("%lu", strlen(str));
-	printf("%s", str);
+	int right;
+	int prec;
+	int width;
+	int zero_space;
+}				t_var;
+
+t_var			ft(t_var var)
+{
+	var.right = 1;
+	return (var);
+}
+
+int			tf(t_var var)
+{
+	var.prec = 2;
+	return (var.prec);
+}
+
+int				main(void)
+{
+	t_var var;
+
+	var = ft(var);
+	var.prec = tf(var);
+	printf("%d\n%d", var.right, var.prec);
 }
