@@ -20,6 +20,8 @@ int ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			parsing(str, var, arg);
+			if (var.total_len == -1)
+				return (var.total_len);
 		}
 		else
 			var.total_len += ft_putchar(str[i]);

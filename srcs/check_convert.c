@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-t_var		check_convert(char *str, t_var var, va_list arg)
+t_var		check_convert(const	char *str, t_var var, va_list arg)
 {
 	int i;
 	char one_char[2];
@@ -23,21 +23,27 @@ t_var		check_convert(char *str, t_var var, va_list arg)
 	}
 	else if (var.conv == 'd' || var.conv == 'i')
 	{
-		ft_putnbr(va_arg(arg, int),
-				&(var.total_len));
+		var.total_len = ft_putnbr(va_arg(arg, int));
 	}
 	else if (var.conv == 'u')
 	{
-		ft_putnbr_ui((unsigned
-					int)va_arg(arg, int), var.total_len);
+		var.total_len = ft_putnbr_ui((unsigned	int)va_arg(arg, int));
 	}
 	else if (var.conv == 'x')
 	{
-		var.total_len += if (ft_convert_hexa((unsigned int)va_arg(arg, int), 0) == -1)
+		if ((var.total_len = (ft_convert_hexa((unsigned int)va_arg(arg, int), 0) == -1)))
+		{
+			var.total_len = -1;
+			return(var);
+		}
 	}
 	else if (var.conv == 'X')
 	{
-		var.total_len += ft_convert_hexa((unsigned int)va_arg(arg, int), 1);
+		if ((var.total_len = (ft_convert_hexa((unsigned int)va_arg(arg, int), 0) == -1)))
+		{
+			var.total_len = -1;
+			return(var);
+			}
 	}
 	else if (var.conv == '%')
 	{

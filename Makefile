@@ -21,6 +21,7 @@ FILES =		./srcs/ft_printf\
 			./srcs/utils/ft_putmem\
 			./srcs/utils/ft_putnbr\
 			./srcs/utils/ft_putnbr_ui\
+			./srcs/utils/ft_putstr\
 			./srcs/utils/ft_strlen\
 
 SRCS = $(addsuffix .c, $(FILES))

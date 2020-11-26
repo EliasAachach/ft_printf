@@ -1,3 +1,5 @@
+#include "ft_printf.h"
+
 static int	skipuselesschar(const char *str)
 {
 	int	i;
@@ -11,6 +13,14 @@ static int	skipuselesschar(const char *str)
 			|| str[i] == ' ')
 		++i;
 	return (i);
+}
+
+int		ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
 
 int			ft_atoi(const char *str)

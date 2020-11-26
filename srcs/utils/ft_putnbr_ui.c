@@ -1,10 +1,10 @@
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_ui(unsigned int nbr, int *len)
+int	ft_putnbr_ui(unsigned int nbr)
 {
-	unsigned int n;
+	unsigned int	n;
+	static		int len;
 
-	*len = *len + 1;
 	n = nbr;
 	if (nbr < 0)
 	{
@@ -16,4 +16,5 @@ void	ft_putnbr_ui(unsigned int nbr, int *len)
 		ft_putnbr_ui(nbr / 10);
 	}
 	ft_putchar(n % 10 + '0');
+	return (len);
 }

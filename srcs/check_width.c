@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-t_var	check_width(const char *str, t_var var)
+t_var	check_width(const char *str, t_var var, va_list arg)
 {
 	int i;
 

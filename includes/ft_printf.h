@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdarg.h>
+# include <stdlib.h>
 
 #define TRUE 1
 #define FALSE 0
@@ -21,15 +22,15 @@ typedef struct s_var
 }				t_var;
 
 t_var	parsing(const	char	*str, t_var	var, va_list arg);
-t_var	check_convert(char	*str, t_var
+t_var	check_convert(const	char	*str, t_var
 var, va_list arg);
 t_var	check_flags(const	char	*str,
 t_var	var);
-t_var	check_precision(char	*str,
-t_var	var);
+t_var	check_precision(const char	*str,
+t_var	var, va_list arg);
 t_var	check_width(const	char	*str,
-t_var	var);
-t_var	wich_convert(char	*str, t_var
+t_var	var, va_list arg);
+t_var	wich_convert(const	char	*str, t_var
 var);
 int		ft_printf(const	char	*str,
 ...);
@@ -41,7 +42,7 @@ int		ft_putstr(char	*str);
 int		ft_atoi(const	char	*str);
 int		ft_display(char	*str, t_var var);
 int		ft_strlen(char	*str);
-void	ft_putnbr(int nbr, int *len);
-void	ft_putnbr_ui(unsigned int nbr, int *len);
+int		ft_putnbr(int nbr);
+int		ft_putnbr_ui(unsigned int nbr);
 
 #endif
