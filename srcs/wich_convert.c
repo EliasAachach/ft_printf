@@ -2,22 +2,22 @@
 
 t_var	wich_convert(const	char *str, t_var var)
 {
-	int i;
-
-	i = 0;
-	while(str[i])
+	while(str[var.index])
 	{
-		if(str[i] == ' ')
+		if(str[var.index] == ' ')
 			return(var);
-		if (str[i] == 'c' || str[i] == 's' || str[i] ==
-		'p' || str[i] == 'd' || str[i] == 'i' || str[i]
-		== 'u' || str[i] == 'x' || str[i] == 'X' ||
-		str[i] == '%')
+		if (str[var.index] == 'c' || str[var.index] == 's' || str[var.index] ==
+		'p' || str[var.index] == 'd' || str[var.index] == 'i' || str[var.index]
+		== 'u' || str[var.index] == 'x' || str[var.index] == 'X' ||
+		str[var.index] == '%')
 		{
-			var.conv = str[i];
+			var.conv = str[var.index];
+			ft_putchar(str[var.index]);
+			ft_putchar('\n');
+			ft_putchar(var.conv);
 			return(var);
 		}
-		i++;
+		var.index++;
 	}
 	return(var);
 }

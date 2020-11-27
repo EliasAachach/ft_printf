@@ -13,11 +13,12 @@
 
 typedef struct s_var
 {
-	int right;
-	int prec;
-	int width;
-	int zero_space;
-	int total_len;
+	int	right;
+	int	prec;
+	int	width;
+	int	zero_space;
+	int	total_len;
+	int	index;
 	int	conv;
 }				t_var;
 

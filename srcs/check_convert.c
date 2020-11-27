@@ -2,10 +2,8 @@
 
 t_var		check_convert(const	char *str, t_var var, va_list arg)
 {
-	int i;
 	char one_char[2];
 
-	i = 0;
 	if (var.conv == 0)
 		return (var);
 	if (var.conv == 'c')

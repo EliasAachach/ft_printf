@@ -5,7 +5,7 @@ t_var var, va_list arg)
 {
 	int i;
 
-	i = 0;
+	i = var.index;
 	var.prec = FALSE;
 	while (str[i])
 	{
@@ -18,6 +18,8 @@ t_var var, va_list arg)
 			else
 			{
 				var.prec = ft_atoi(str + i);
+				var.index = i;
+				return (var);
 			}
 		}
 		i++;

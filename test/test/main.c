@@ -24,9 +24,5 @@ int			tf(t_var var)
 
 int				main(void)
 {
-	t_var var;
-
-	var = ft(var);
-	var.prec = tf(var);
-	printf("%d\n%d", var.right, var.prec);
+	printf("%..2d", 2);
 }
