@@ -5,6 +5,7 @@ int	ft_putnbr_ui(unsigned int nbr)
 	unsigned int	n;
 	static		int len;
 
+	len = 0;
 	n = nbr;
 	if (nbr < 0)
 	{
@@ -15,6 +16,6 @@ int	ft_putnbr_ui(unsigned int nbr)
 	{
 		ft_putnbr_ui(nbr / 10);
 	}
-	ft_putchar(n % 10 + '0');
+	len += ft_putchar(n % 10 + '0');
 	return (len);
 }

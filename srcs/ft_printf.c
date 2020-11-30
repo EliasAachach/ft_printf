@@ -18,7 +18,8 @@ int ft_printf(const char *str, ...)
 	{
 		if (str[var.index] == '%')
 		{
-			parsing(str, var, arg);
+			var.index++;
+			var = parsing(str, var, arg);
 			if (var.total_len == -1)
 				return (var.total_len);
 		}

@@ -35,9 +35,10 @@ char	*fillstr(char a, char *str)
 
 int main()
 {
-	char a = 'a';
-	char str[3];
-	fillstr(a, str);
-	printf("%s", str);
+//	char a = 'a';
+//	char str[3];
+//	fillstr(a, str);
+	//printf("%9s", "bonjour");
+	printf("%c", '0');
 //	ft_putstr(str);
 }

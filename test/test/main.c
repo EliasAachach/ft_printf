@@ -24,5 +24,5 @@ int			tf(t_var var)
 
 int				main(void)
 {
-	printf("%..2d", 2);
+	printf("%%");
 }
