@@ -58,6 +58,7 @@ t_var		check_convert(const	char *str, t_var var, va_list arg)
 	else if (var.conv == '%')
 	{
 		var.total_len += ft_putchar('%');
+		return(var);
 	}
 	return (var);
 }

@@ -24,5 +24,7 @@ int			tf(t_var var)
 
 int				main(void)
 {
-	printf("%%");
+	int i = 12;
+
+	printf("%%%");
 }
