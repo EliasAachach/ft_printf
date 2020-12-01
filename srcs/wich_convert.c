@@ -7,9 +7,10 @@ t_var	wich_convert(const	char *str, t_var var)
 	i = var.index;
 	while(str[i])
 	{
-		if(str[i] == ' ')
+		if(str[i] == '\t')
 		{
-			var.index = i;
+			var.index = i; 
+			var.total_len += ft_putchar('\t');
 			return(var);
 		}
 		if (str[i] == 'c' || str[i] == 's' || str[i] ==

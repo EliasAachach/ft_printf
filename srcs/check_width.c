@@ -5,6 +5,7 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 	int i;
 
 	i = var.index;
+	var.zero_space = ' ';
 	while (str[i])
 	{
 		if (str[i] == '0')
@@ -21,6 +22,7 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 		{
 			var.width = ft_atoi(str + i);
 			var.index = i;
+			ft_putchar(var.zero_space);
 			return (var);
 		}
 		i++;

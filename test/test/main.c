@@ -26,5 +26,5 @@ int				main(void)
 {
 	int i = 12;
 
-	printf("%%%");
+	printf("%d", printf("%10s%6s", "cinqu", "septe"));
 }
