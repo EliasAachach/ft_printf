@@ -1,7 +1,10 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-
+/*
+      bonjour
+       bonjo
+*/
 typedef struct	s_var
 {
 	int right;
@@ -26,5 +29,5 @@ int				main(void)
 {
 	int i = 12;
 
-	printf("%d", printf("%10s%6s", "cinqu", "septe"));
+	printf("\n%d", printf("%8.7s", "bonjour"));
 }

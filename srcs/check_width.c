@@ -13,6 +13,8 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 			var.zero_space = '0';
 			i++;
 		}
+		if(str[i] == '.')
+			return(var);
 		if (str[i] == '*')
 		{
 			var.width = va_arg(arg, int);
@@ -22,7 +24,6 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 		{
 			var.width = ft_atoi(str + i);
 			var.index = i;
-			ft_putchar(var.zero_space);
 			return (var);
 		}
 		i++;

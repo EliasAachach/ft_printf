@@ -4,8 +4,9 @@ int	main()
 	unsigned int i = 2147483747;
 	unsigned int u = 21474837;
 //	printf("\n%d", ft_printf("%c", 'c'));
-	printf("\ns : %d", ft_printf("s : %12s", "bonjour"));
-//	printf("\np : %d", ft_printf("p : %p", &i));
+	printf("\ns : %d", ft_printf("%-9s", "bonjour"));
+	printf("\ns : %d", printf("\n%-9s", "bonjour"));
+//	printf("\np : %d", ft_printf("%p", &i));
 //	printf("\nd : %d", ft_printf("d :%d", 123));
 //	printf("\ni : %d", ft_printf("i : %i", 213));
 //	printf("\nu : %d", ft_printf("u : %u", i));

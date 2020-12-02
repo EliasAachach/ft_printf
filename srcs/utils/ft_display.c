@@ -12,16 +12,29 @@ int ft_display(char *str, t_var var)
 		i = ft_display("(null)", var);
 		return (i);
 	}
-	while (ft_strlen(str) < var.width && y
-	<= var.width)
+	if (ft_strlen(str) > var.prec && var.prec > 0)
 	{
-		ft_putchar(var.zero_space);
-		y++;
+		while (y < var.width - var.prec)
+		{
+			y += ft_putchar(var.zero_space);
+		}
+		while (str[i] && i < var.prec)
+		{
+			ft_putchar(str[i]);
+			i++;
+		}
 	}
-	while (str[i] || i <= var.prec)
+	else
 	{
-		ft_putchar(str[i]);
-		i++;
+		while (y < var.width - ft_strlen(str))
+		{
+			y += ft_putchar(var.zero_space);
+		}
+		while (str[i])
+		{
+			ft_putchar(str[i]);
+			i++;
+		}
 	}
 	if (var.right == TRUE)
 	{
