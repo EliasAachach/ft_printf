@@ -14,9 +14,12 @@ int ft_display(char *str, t_var var)
 	}
 	if (ft_strlen(str) > var.prec && var.prec > 0)
 	{
-		while (y < var.width - var.prec)
+		if (var.right == FALSE)
 		{
-			y += ft_putchar(var.zero_space);
+			while (y < var.width - var.prec)
+			{
+				y += ft_putchar(var.zero_space);
+			}
 		}
 		while (str[i] && i < var.prec)
 		{
@@ -26,9 +29,12 @@ int ft_display(char *str, t_var var)
 	}
 	else
 	{
-		while (y < var.width - ft_strlen(str))
+		if (var.right == FALSE)
 		{
-			y += ft_putchar(var.zero_space);
+			while (y < var.width - ft_strlen(str))
+			{
+				y += ft_putchar(var.zero_space);
+			}
 		}
 		while (str[i])
 		{
@@ -38,10 +44,10 @@ int ft_display(char *str, t_var var)
 	}
 	if (var.right == TRUE)
 	{
-		while (i < var.width)
+		while (y < var.width - i)
 		{
 			ft_putchar(var.zero_space);
-			i++;
+			y++;
 		}
 	}
 	return (i + y);

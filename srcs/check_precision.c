@@ -13,6 +13,8 @@ t_var var, va_list arg)
 			if (str[i + 1] == '*')
 			{
 				var.prec = va_arg(arg, int);
+		ft_putnbr(var.prec);
+		ft_putchar('\n');
 			}
 			else
 			{
