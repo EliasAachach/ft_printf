@@ -29,5 +29,5 @@ int				main(void)
 {
 	int i = 12;
 
-	printf("\n%d", printf("%-010.3s", "bonjour"));
+	printf("\n%d", printf("%010.3d", 42));
 }
