@@ -30,7 +30,7 @@ void	convert_mem(unsigned long long int nbr, char *nbr_final,\
 	nbr_final[final_len] = base[nbr];
 }
 
-int		ft_mem_hexa(unsigned long long int nbr)
+char	*ft_mem_hexa(unsigned long long int nbr)
 {
 	unsigned long long int	q;
 	unsigned long long int	r;
@@ -43,13 +43,13 @@ int		ft_mem_hexa(unsigned long long int nbr)
 	tmp = 0;
 	final_len = ft_nbrlen_mem(nbr);
 	if (!(nbr_final = (char *)malloc(sizeof(char) * (final_len + 1))))
-		return (-1);
+		return (NULL);
 	nbr_final[final_len] = '\0';
 	final_len--;
 	if (nbr < 16)
 	{
 		convert_mem(nbr, nbr_final, final_len);
-		return (ft_putstr(nbr_final));
+		return (nbr_final);
 	}
 	else
 	{
@@ -68,10 +68,35 @@ int		ft_mem_hexa(unsigned long long int nbr)
 		convert_mem(q, nbr_final, final_len);
 		final_len--;
 	}
-	return (ft_putstr("0x") + ft_putstr(nbr_final));
+	return (nbr_final);
 }
 
-int	ft_putmem(void *addr)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	return (ft_mem_hexa((unsigned long long int)addr));
+	char			*dest;
+	unsigned int	i;
+
+	i = 0;
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	dest = (char*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (dest == NULL)
+		return (NULL);
+	while (*s1 != '\0')
+		dest[i++] = *s1++;
+	while (*s2 != '\0')
+		dest[i++] = *s2++;
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_putmem(void *addr)
+{
+    char *str;
+    char *ret;
+
+    str = ft_mem_hexa((unsigned long long int)addr);
+    if (!(ret = ft_strjoin("0x", str)))
+        return (NULL);
+	return (ret);
 }

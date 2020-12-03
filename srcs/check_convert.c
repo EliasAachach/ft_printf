@@ -25,7 +25,14 @@ t_var		check_convert(const	char *str, t_var var, va_list arg)
 	}
 	else if (var.conv == 'p')
 	{
-		var.total_len += ft_putmem((va_arg(arg, void *)));
+		tmp = 0;
+		if ((tmp = (ft_display(ft_putmem((va_arg(arg, void *))), var))) == -1)
+		{
+			var.total_len = -1;
+			ft_putchar('o');
+			return(var);
+		}
+		var.total_len += tmp;
 	}
 	else if (var.conv == 'd' || var.conv == 'i')
 	{

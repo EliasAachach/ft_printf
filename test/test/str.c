@@ -7,6 +7,16 @@ int		ft_putchar(char c)
 	return (1);
 }
 
+int		ft_strlen(char *str)
+{
+	int	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
 int	ft_putnbr(int nbr)
 {
 	unsigned int n;
@@ -51,9 +61,16 @@ int	ft(int nbr)
 	return (i);
 }
 
+char	*string(char	*str)
+{
+	str = "bonjour";
+	return(str);
+}
+
 int main()
 {
-	printf("\n%d", ft_putnbr(12));
-	//printf("\ndiv%d", 312/10);
-	//printf("\nmodulo%d", 312%10);
+	char *str;
+	str = string(str);
+	printf("%d", ft_strlen(str));
+	printf("\n%s",str);
 }
