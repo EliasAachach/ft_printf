@@ -33,6 +33,7 @@ t_var	check_width(const	char	*str,
 t_var	var, va_list arg);
 t_var	wich_convert(const	char	*str, t_var var);
 char	*ft_putmem(void	*addr);
+char	*ft_itoa(int nbr);
 int		ft_printf(const	char	*str,
 ...);
 int		ft_convert_hexa(unsigned int nbr, int maj);

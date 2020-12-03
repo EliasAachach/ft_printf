@@ -23,6 +23,7 @@ FILES =		./srcs/ft_printf\
 			./srcs/utils/ft_putnbr_ui\
 			./srcs/utils/ft_putstr\
 			./srcs/utils/ft_strlen\
+			./srcs/utils/ft_itoa\
 
 SRCS = $(addsuffix .c, $(FILES))
 OBJ = $(SRCS:.c=.o)
