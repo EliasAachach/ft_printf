@@ -6,10 +6,11 @@ int	main()
 //	printf("\n%d", ft_printf("%c", 'c'));
 //	printf("\ns : %d\n", ft_printf("%*.*s", 9, 3, "bonjour"));
 //	printf("\np : %d", ft_printf("%p", &i));
-	printf("\nd : %d", ft_printf("%.4d", 123));
-	printf("\nd : %d", printf("\n%.4d", 123));
-//	printf("\ni : %d", ft_printf("i : %i", 213));
-//	printf("\nu : %d", ft_printf("u : %u", i));
+//	printf("\nd : %d", ft_printf("%d", 123));
+//	printf("\nd : %d", printf("\n%d", 123));
+//	printf("\ni : %d", ft_printf("%067i", 213));
+//	printf("\nu : %d", ft_printf("%7u", i));
+//	printf("\nu : %d", printf("\n%7u", i) - 1);
 //	printf("\nx : %d", ft_printf("x : %x", 42));
 //	printf("\nX : %d", ft_printf("X : %X", 42));
 //	printf("\nprcnt : %d", ft_printf("% : %"));

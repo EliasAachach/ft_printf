@@ -23,7 +23,7 @@ void	convert_stock(int nbr, int maj, char *nbr_final, int final_len)
 	nbr_final[final_len] = base[nbr];
 }
 
-int		ft_convert_hexa(unsigned int nbr, int maj)
+char	*ft_convert_hexa(unsigned int nbr, int maj)
 {
 	unsigned int	q;
 	unsigned int	r;
@@ -36,13 +36,13 @@ int		ft_convert_hexa(unsigned int nbr, int maj)
 	tmp = 0;
 	final_len = ft_nbrlen_hexa(nbr);
 	if (!(nbr_final = (char *)malloc(sizeof(char) * (final_len + 1))))
-		return (-1);
+		return (NULL);
 	nbr_final[final_len] = '\0';
 	final_len--;
 	if (nbr < 16)
 	{
 		convert_stock(nbr, maj, nbr_final, final_len);
-		return (ft_putstr(nbr_final));
+		return (nbr_final);
 	}
 	else
 	{
@@ -63,5 +63,5 @@ int		ft_convert_hexa(unsigned int nbr, int maj)
 	}
 	if (maj == 1)
 		ft_toupper(nbr_final);
-	return (ft_putstr(nbr_final));
+	return (nbr_final);
 }

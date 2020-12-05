@@ -40,22 +40,28 @@ t_var		check_convert(const	char *str, t_var var, va_list arg)
 				var.total_len = -1;
 				return(var);
 			}
-		var.total_len += ft_display(tmp_str, var);
+		var.total_len += ft_display_diux(tmp_str, var);
 	}
 	else if (var.conv == 'u')
 	{
-		var.total_len += ft_putnbr_ui((unsigned	int)va_arg(arg, int));
+		if ((tmp_str = ft_itoa_ui(va_arg(arg, int))) == NULL)
+			{
+				var.total_len = -1;
+				return(var);
+			}
+		var.total_len += ft_display_diux(tmp_str, var);
 	}
 	else if (var.conv == 'x')
 	{
-		tmp = 0;
-		if ((tmp = (ft_convert_hexa((unsigned int)va_arg(arg, int), 0))) == -1)
-		{
-			var.total_len = -1;
-			return(var);
-		}
-		var.total_len += tmp;
+		if ((tmp_str = ft_convert_hexa((unsigned int)va_arg(arg, int), 0))
+ == NULL)
+			{
+				var.total_len = -1;
+				return(var);
+			}
+		var.total_len += ft_display_diux(tmp_str, var);
 	}
+	/*
 	else if (var.conv == 'X')
 	{
 		tmp = 0;
@@ -65,7 +71,7 @@ t_var		check_convert(const	char *str, t_var var, va_list arg)
 			return(var);
 		}
 			var.total_len += tmp;
-	}
+	} */
 	else if (var.conv == '%')
 	{
 		var.total_len += ft_putchar('%');

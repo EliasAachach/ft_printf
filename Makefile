@@ -16,6 +16,7 @@ FILES =		./srcs/ft_printf\
 			./srcs/utils/ft_atoi\
 			./srcs/utils/ft_convert_hexa\
 			./srcs/utils/ft_display\
+			./srcs/utils/ft_display_diux\
 			./srcs/utils/ft_nbrlen_hexa\
 			./srcs/utils/ft_putchar\
 			./srcs/utils/ft_putmem\
@@ -24,6 +25,7 @@ FILES =		./srcs/ft_printf\
 			./srcs/utils/ft_putstr\
 			./srcs/utils/ft_strlen\
 			./srcs/utils/ft_itoa\
+			./srcs/utils/ft_itoa_ui\
 
 SRCS = $(addsuffix .c, $(FILES))
 OBJ = $(SRCS:.c=.o)
