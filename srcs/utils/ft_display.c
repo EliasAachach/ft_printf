@@ -7,6 +7,8 @@ int ft_display(char *str, t_var var)
 
 	i = 0;
 	y = 0;
+	if (var.conv == '%' && var.right == TRUE)
+		var.zero_space = ' ';
 	if (str == NULL)
 	{
 		i = ft_display("(null)", var);
