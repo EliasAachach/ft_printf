@@ -6,6 +6,7 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 
 	i = var.index;
 	var.zero_space = ' ';
+	var.width = 0;
 	while (str[i] && str[i] != '.')
 	{
 		if (str[i] == '0')

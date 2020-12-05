@@ -6,6 +6,7 @@ t_var var, va_list arg)
 	int i;
 
 	i = var.index;
+	var.prec = 0;
 	while (str[i])
 	{
 		if (str[i] == '.')
