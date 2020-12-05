@@ -61,21 +61,20 @@ t_var		check_convert(const	char *str, t_var var, va_list arg)
 			}
 		var.total_len += ft_display_diux(tmp_str, var);
 	}
-	/*
 	else if (var.conv == 'X')
 	{
-		tmp = 0;
-		if ((tmp = (ft_convert_hexa((unsigned int)va_arg(arg, int), 1))) == -1)
-		{
-			var.total_len = -1;
-			return(var);
-		}
-			var.total_len += tmp;
-	} */
+		if ((tmp_str = ft_convert_hexa((unsigned int)va_arg(arg, int), 1))
+ == NULL)
+			{
+				var.total_len = -1;
+				return(var);
+			}
+		var.total_len += ft_display_diux(tmp_str, var);
+	}
 	else if (var.conv == '%')
-	{
-		var.total_len += ft_putchar('%');
-		return(var);
+	{;
+		one_char[0] = '%';
+		var.total_len += ft_display(one_char, var);
 	}
 	return (var);
 }

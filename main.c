@@ -11,7 +11,8 @@ int	main()
 //	printf("\ni : %d", ft_printf("%067i", 213));
 //	printf("\nu : %d", ft_printf("%7u", i));
 //	printf("\nu : %d", printf("\n%7u", i) - 1);
-//	printf("\nx : %d", ft_printf("x : %x", 42));
-//	printf("\nX : %d", ft_printf("X : %X", 42));
-//	printf("\nprcnt : %d", ft_printf("% : %"));
+//	printf("\nx : %d", ft_printf("%4.0x", 42));
+//	printf("\nX : %d", ft_printf("%4.0X", 42));
+//	printf("\nprcnt : %d", ft_printf("%3.0%"));
+//	printf("\nprcnt : %d", printf("\n%3.0%") );
 }
