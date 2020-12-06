@@ -4,11 +4,11 @@ int	main()
 	unsigned int i = 2147483747;
 //	unsigned int u = 21474837;
 //	printf("\n%d", ft_printf("%c", 'c'));
-	printf("\ns : %d\n", ft_printf("%.s", "hello"));
-	printf("\ns : %d\n", printf("%.s", "hello"));
+	printf("\ns : %d\n", ft_printf("%-09s", "hello"));
+	printf("\ns : %d\n", printf("%-09s", "hello"));
 //	printf("\np : %d", ft_printf("%p", &i));
 //	printf("\nd : %d", ft_printf("%.6d", 123));
-	printf("\nd : %d", printf("\n%.6d", 123));
+//	printf("\nd : %d", printf("\n%.6d", 123));
 //	printf("\ni : %d", ft_printf("%067i", 213));
 //	printf("\nu : %d", ft_printf("%7u", i));
 //	printf("\nu : %d", printf("\n%7u", i) - 1);

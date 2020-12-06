@@ -13,13 +13,14 @@
 
 typedef struct s_var
 {
-	int	right;
-	int	prec;
-	int	width;
-	int	zero_space;
-	int	total_len;
-	int	index;
-	int	conv;
+	int		right;
+	int		prec;
+	int		width;
+	int		zero_space;
+	int		total_len;
+	int		index;
+	int		conv;
+	char	*identifier;
 }				t_var;
 
 t_var	parsing(const	char	*str, t_var	var, va_list arg);
