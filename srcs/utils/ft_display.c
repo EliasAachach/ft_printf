@@ -48,6 +48,7 @@ int ft_display(char *str, t_var var)
 	{
 		while (y < var.width - i)
 		{
+			var.zero_space = ' ';
 			ft_putchar(var.zero_space);
 			y++;
 		}
