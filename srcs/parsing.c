@@ -6,7 +6,7 @@ t_var	parsing(const char *str, t_var var, va_list arg)
 	var = check_width(str, var, arg);
 	var = check_precision(str, var, arg);
 	var = wich_convert(str, var);
-	if (var.prec == -1)
+	if (var.prec == -1 && var.conv != 'p')
 	{
 		if (var.width > 0)
 		{

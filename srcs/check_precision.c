@@ -22,6 +22,7 @@ t_var var, va_list arg)
 		}
 		if (str[i] == '.')
 		{
+			var.isprec = TRUE;
 			y = 0;
 			if (str[i + 1] == '*')
 			{
@@ -29,8 +30,7 @@ t_var var, va_list arg)
 			}
 			while (var.identifier[y])
 			{
-				if (str[i + 1] == var.identifier[y]
-				|| (str[i + 1] == '0' && str[i + 1] == var.identifier[y]))
+				if (str[i + 1] == var.identifier[y] || (str[i + 1] == '0' && str[i + 1] == var.identifier[y]))
 				{
 						var.prec = -1;
 						var.index = i;

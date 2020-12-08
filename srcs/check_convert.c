@@ -26,7 +26,7 @@ t_var		check_convert(const	char *str, t_var var, va_list arg)
 	}
 	else if (var.conv == 'p')
 	{
-		if ((tmp_str = ft_putmem((va_arg(arg, void *)))) == NULL)
+		if ((tmp_str = ft_putmem(va_arg(arg, void *), var.isprec)) == NULL)
 		{
 			var.total_len = -1;
 			return(var);

@@ -3,11 +3,12 @@ int	main()
 {
 	unsigned int i = 2147483747;
 //	unsigned int u = 21474837;
-//	printf("\n%d", ft_printf("%c", 'c'));
+	printf("\nc : %d", ft_printf("%*c", -2, 'c'));
+	printf("\nc : %d\n", printf("\n%*c", -2, 'c') - 1);
 //	printf("\ns : %d\n", ft_printf("%-09s", "hello"));
-//	printf("\ns : %d\n", printf("%-09s", "hello"));
-	printf("\np : %d", ft_printf("%.p", NULL));
-	printf("\np : %d", printf("%.p", NULL));
+//	printf("\ns : %d\n", printf("%09s", "hello"));
+//	printf("\np : %d", ft_printf("%9.2p", 1234));
+//	printf("\np : %d", printf("\n%9.2p", 1234) - 1);
 //	printf("\nd : %d", ft_printf("%.6d", 123));
 //	printf("\nd : %d", printf("\n%.6d", 123));
 //	printf("\ni : %d", ft_printf("%08.3i", 8375));

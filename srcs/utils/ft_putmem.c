@@ -90,11 +90,18 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (dest);
 }
 
-char	*ft_putmem(void *addr)
+char	*ft_putmem(void *addr, int isprec)
 {
     char *str;
     char *ret;
 
+	
+	if (addr == NULL && isprec == TRUE)
+	{
+		if (!(ret = ft_strjoin("0x", "")))
+			return (NULL);
+			return (ret);
+	}
     str = ft_mem_hexa((unsigned long long int)addr);
     if (!(ret = ft_strjoin("0x", str)))
         return (NULL);

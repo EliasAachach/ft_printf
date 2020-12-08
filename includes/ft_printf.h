@@ -20,6 +20,7 @@ typedef struct s_var
 	int		total_len;
 	int		index;
 	int		conv;
+	int		isprec;
 	char	*identifier;
 }				t_var;
 
@@ -32,7 +33,7 @@ t_var	var, va_list arg);
 t_var	check_width(const	char	*str,
 t_var	var, va_list arg);
 t_var	wich_convert(const	char	*str, t_var var);
-char	*ft_putmem(void	*addr);
+char	*ft_putmem(void	*addr, int isprec);
 char	*ft_itoa(int nbr);
 char	*ft_itoa_ui(unsigned int nbr);
 int		ft_printf(const	char	*str, ...);

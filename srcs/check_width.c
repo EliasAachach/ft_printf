@@ -16,6 +16,8 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 		if (str[i] == '*')
 		{
 			var.width = va_arg(arg, int);
+			if (var.width < 0)
+				var.width = -var.width;
 		}
 		if (str[i] >= '0' && str[i] <= '9')
 		{
