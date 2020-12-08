@@ -20,6 +20,7 @@ int ft_display_diux(char *str, t_var var)
 	{
 		if (var.right == FALSE)
 		{
+			var.zero_space = ' ';
 			while (y < var.width - len)
 			{
 				y += ft_putchar(var.zero_space);
@@ -51,7 +52,7 @@ int ft_display_diux(char *str, t_var var)
 					var.zero_space = ' ';
 					if (str[0] == '-')
 						var.width--;
-					while (y < var.width - (len - (len - var.prec)))
+					while (y < var.width - var.prec)
 						y += ft_putchar(var.zero_space);
 				}
 				else
