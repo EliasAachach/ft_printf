@@ -9,6 +9,7 @@ t_var var, va_list arg)
 	y = 0;
 	i = var.index;
 	var.prec = 0;
+	var.isprec = FALSE;
 	while (str[i])
 	{
 		y = 0;
