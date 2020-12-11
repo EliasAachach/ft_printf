@@ -13,6 +13,7 @@ int ft_printf(const char *str, ...)
 	var.total_len = 0;
 	var.index = 0;
 	var.isprec = 0;
+	var.diux = 0;
 	var.identifier = "cspdiuxX%";
 	va_start(arg, str);
 

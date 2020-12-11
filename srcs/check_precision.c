@@ -30,19 +30,28 @@ t_var var, va_list arg)
 			}
 			while (var.identifier[y])
 			{
-				if (str[i + 1] == var.identifier[y] || (str[i + 1] == '0' && str[i + 1] == var.identifier[y]))
+				if (str[i + 1] == var.identifier[y])
 				{
+					if (var.identifier[y] == 'd')
+					{
+						var.diux = TRUE;
+					}
+					else
+					{
 						var.prec = -1;
 						var.index = i;
 						return (var);
+					}
 				}
 				y++;
 			}
 			if (!(str[i + 1] == '*'))
 			{
 				var.prec = ft_atoi(str + (i + 1));
-				if (var.prec == 0)
-					var.prec= -1;
+				if (var.prec == 0 && var.diux == FALSE)
+				{
+					var.prec = -1;
+				}
 				var.index = i;
 				return (var);
 			}

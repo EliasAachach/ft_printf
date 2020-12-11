@@ -14,7 +14,7 @@ int	ft_putnbr(int nbr)
 	}
 	if (n >= 10)
 	{
-		ft_putnbr(nbr / 10);
+		ft_putnbr(n / 10);
 	}
 	len += ft_putchar(n % 10 + '0');
 	return (len);

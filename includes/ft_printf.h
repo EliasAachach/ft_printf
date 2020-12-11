@@ -21,6 +21,7 @@ typedef struct s_var
 	int		index;
 	int		conv;
 	int		isprec;
+	int		diux;
 	char	*identifier;
 }				t_var;
 
