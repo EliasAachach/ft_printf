@@ -11,7 +11,17 @@ int ft_display_diux(char *str, t_var var)
 	i = 0;
 	y = 0;
 	j = 0;
-	if (var.isprec == TRUE)
+	if (ft_strlen(str) == 1 && str[0] == '0' && var.prec == 0 && var.isprec == TRUE)
+	{
+		if (var.width > 0)
+			var.prec = -1;
+		else
+		{
+			return (0);
+		}
+		
+	}
+	if (var.isprec == TRUE && (var.prec >= 0 || var.errorprec == TRUE))
 	{
 		var.zero_space = ' ';
 	}

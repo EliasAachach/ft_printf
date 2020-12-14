@@ -40,6 +40,7 @@ t_var var, va_list arg)
 					else
 					{
 						var.prec = -1;
+						var.errorprec = TRUE;
 						var.index = i;
 						return (var);
 					}
@@ -52,6 +53,7 @@ t_var var, va_list arg)
 				if (var.prec == 0 && var.diux == FALSE)
 				{
 					var.prec = -1;
+					var.errorprec = TRUE;
 				}
 				var.index = i;
 				return (var);

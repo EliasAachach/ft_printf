@@ -5,6 +5,7 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 	int i;
 	int y;
 
+
 	y = 0;
 	i = var.index;
 	var.zero_space = ' ';
@@ -23,8 +24,12 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 		if (str[i] == '0')
 		{
 			var.zero_space = '0';
-			if (str[i + 1] == '*' || (str[i + 1] >= '0' && str[i + 1] <= '9'))
+			while (str[i] == '0')
+			{
 				i++;
+			}
+			if (str[i] == '.')
+				return (var);
 		}
 		if (str[i] == '*')
 		{

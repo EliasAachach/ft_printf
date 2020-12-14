@@ -42,6 +42,8 @@ char	*ft_convert_hexa(unsigned int nbr, int maj)
 	if (nbr < 16)
 	{
 		convert_stock(nbr, maj, nbr_final, final_len);
+		if (maj == 1)
+			ft_toupper(nbr_final);
 		return (nbr_final);
 	}
 	else
