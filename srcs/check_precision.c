@@ -33,7 +33,7 @@ t_var var, va_list arg)
 			{
 				if (str[i + 1] == var.identifier[y])
 				{
-					if (var.identifier[y] == 'd')
+					if (var.identifier[y] == 'd' || var.identifier[y] == 'i' ||  var.identifier[y] == 'u' ||  var.identifier[y] == 'x' ||  var.identifier[y] == 'X')
 					{
 						var.diux = TRUE;
 					}
