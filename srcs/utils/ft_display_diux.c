@@ -2,21 +2,28 @@
 
 int ft_display_diux(char *str, t_var var)
 {
+	int neg;
 	int len;
 	int i;
 	int y;
 	int j;
 
+	neg = FALSE;
 	len = ft_strlen(str);
 	i = 0;
 	y = 0;
 	j = 0;
 	if (var.prec < 0 && var.errorprec == FALSE)
+	{
+		neg = TRUE;
 		var.prec = 1;
-	if (ft_strlen(str) == 1 && str[0] == '0' && var.prec == 0 && var.isprec == TRUE)
+	}
+	if (len == 1 && str[0] == '0' && var.prec == 0 && var.isprec == TRUE)
 	{
 		if (var.width > 0)
+		{
 			var.prec = -1;
+		}
 		else
 		{
 			return (0);
@@ -31,6 +38,7 @@ int ft_display_diux(char *str, t_var var)
 	{
 		if (var.width > 0)
 		{
+			var.zero_space = ' ';
 			var.total_len += ft_display("", var);
 			return (var.width);
 		}
@@ -52,7 +60,10 @@ int ft_display_diux(char *str, t_var var)
 	{
 		if (var.right == FALSE)
 		{
-			var.zero_space = ' ';
+			if (neg == FALSE)
+				var.zero_space = ' ';
+			else
+				var.zero_space = '0';
 			while (y < var.width - len)
 			{
 				y += ft_putchar(var.zero_space);
