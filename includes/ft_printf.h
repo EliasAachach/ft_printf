@@ -23,6 +23,7 @@ typedef struct s_var
 	int		isprec;
 	int		diux;
 	int		errorprec;
+	int		iszero;
 	char	*identifier;
 }				t_var;
 

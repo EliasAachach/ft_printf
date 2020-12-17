@@ -7,6 +7,7 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 
 
 	y = 0;
+	var.iszero = FALSE;
 	i = var.index;
 	var.zero_space = ' ';
 	var.width = 0;
@@ -24,6 +25,7 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 		if (str[i] == '0')
 		{
 			var.zero_space = '0';
+			var.iszero = TRUE;
 			while (str[i] == '0')
 			{
 				i++;

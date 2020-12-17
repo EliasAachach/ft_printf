@@ -15,6 +15,7 @@ int ft_printf(const char *str, ...)
 	var.isprec = 0;
 	var.diux = 0;
 	var.errorprec = 0;
+	var.iszero = 0;
 	var.identifier = "cspdiuxX%";
 	va_start(arg, str);
 

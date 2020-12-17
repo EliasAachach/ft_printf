@@ -25,8 +25,8 @@ int	main()
 //	printf("\nx : %d", printf("\n%x", 42));
 //	printf("\nX : %d", ft_printf(" %-3.2X %10.42X ", 10, -10));
 //	printf("\nX : %d\n", printf("\n %-3.2X %10.42X ", 10, -10) - 1);
-	printf("\nd : %d\n", ft_printf("{%0*.*d}", 2, -1, 0));
-	printf("\nd : %d\n", printf("\n{%0*.*d}", 2, -1, 0) - 1);
+	printf("\nd : %d\n", ft_printf("{%*.*d}", 3, -2, 0));
+	printf("\nd : %d\n", printf("\n{%*.*d}", 3, -2, 0) - 1);
 //	printf("\nprcnt : %d", printf("\n%00*d", 4, 5) - 1);
 //	printf("\nprcnt : %d", ft_printf("%3.0%"));
 //	printf("\nprcnt : %d", ft_printf("%3.0%"));

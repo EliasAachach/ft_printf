@@ -97,6 +97,8 @@ int ft_display_diux(char *str, t_var var)
 				if (var.prec > 0)
 				{
 					var.zero_space = ' ';
+					if (neg == TRUE && var.iszero == TRUE)
+						var.zero_space = '0';
 					if (str[0] == '-')
 						var.width--;
 					while (y < var.width - var.prec)
