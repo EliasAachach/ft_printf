@@ -60,7 +60,7 @@ int ft_display_diux(char *str, t_var var)
 	{
 		if (var.right == FALSE)
 		{
-			if (neg == FALSE)
+			if (neg == FALSE || (var.width > var.prec && var.iszero == FALSE))
 				var.zero_space = ' ';
 			else
 				var.zero_space = '0';
