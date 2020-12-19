@@ -2,20 +2,24 @@
 
 int ft_display_diux(char *str, t_var var)
 {
-	int neg;
+	int is_prec_neg;
+	int is_nbr_neg;
 	int len;
 	int i;
 	int y;
 	int j;
 
-	neg = FALSE;
+	is_prec_neg = FALSE;
+	is_nbr_neg = FALSE;
 	len = ft_strlen(str);
 	i = 0;
 	y = 0;
 	j = 0;
+	if (str[0] == '-')
+		is_nbr_neg = TRUE;
 	if (var.prec < 0 && var.errorprec == FALSE)
 	{
-		neg = TRUE;
+		is_prec_neg = TRUE;
 		var.prec = 1;
 	}
 	if (len == 1 && str[0] == '0' && var.prec == 0 && var.isprec == TRUE)
@@ -60,12 +64,16 @@ int ft_display_diux(char *str, t_var var)
 	{
 		if (var.right == FALSE)
 		{
-			if (neg == FALSE || (var.width > var.prec && var.iszero == FALSE))
+			if (is_prec_neg == FALSE || (var.width > var.prec && var.iszero == FALSE))
 				var.zero_space = ' ';
 			else
 				var.zero_space = '0';
 			while (y < var.width - len)
 			{
+				if (is_nbr_neg == TRUE && var.iszero == TRUE && is_prec_neg == TRUE)
+				{
+					i += ft_putchar('-');
+				}
 				y += ft_putchar(var.zero_space);
 			}
 		}
@@ -81,7 +89,7 @@ int ft_display_diux(char *str, t_var var)
 	}
 	else
 	{
-		if (str[i] == '-' && var.zero_space == '0' && var.prec == 0)
+		if (is_nbr_neg == TRUE && var.zero_space == '0' && var.prec == 0)
 		{
 			var.total_len += ft_putchar(str[i]);
 			i++;
@@ -97,9 +105,9 @@ int ft_display_diux(char *str, t_var var)
 				if (var.prec > 0)
 				{
 					var.zero_space = ' ';
-					if (neg == TRUE && var.iszero == TRUE)
+					if (is_prec_neg == TRUE && var.iszero == TRUE)
 						var.zero_space = '0';
-					if (str[0] == '-')
+					if (is_nbr_neg == TRUE)
 						var.width--;
 					while (y < var.width - var.prec)
 						y += ft_putchar(var.zero_space);
@@ -110,7 +118,7 @@ int ft_display_diux(char *str, t_var var)
 				
 			}
 		}
-		if (str[i] == '-')
+		if (is_nbr_neg == TRUE)
 		{
 			var.total_len += ft_putchar(str[i]);
 			i++;
