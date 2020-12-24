@@ -72,7 +72,7 @@ t_var		check_convert(const	char *str, t_var var, va_list arg)
 		var.total_len += ft_display_diux(tmp_str, var);
 	}
 	else if (var.conv == '%')
-	{;
+	{
 		one_char[0] = '%';
 		var.total_len += ft_display(one_char, var);
 	}
