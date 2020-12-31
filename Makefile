@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/12/24 14:08:36 by elaachac          #+#    #+#              #
+#    Updated: 2020/12/30 15:34:53 by elaachac         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 INCLUDE =	ft_printf.h
 
@@ -14,6 +26,7 @@ FILES =		./srcs/ft_printf\
 			./srcs/check_width\
 			./srcs/wich_convert\
 			./srcs/utils/ft_atoi\
+			./srcs/utils/init\
 			./srcs/utils/ft_convert_hexa\
 			./srcs/utils/ft_display\
 			./srcs/utils/ft_display_diux\

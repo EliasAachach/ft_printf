@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_convert.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/30 16:53:51 by elaachac          #+#    #+#             */
+/*   Updated: 2020/12/30 16:59:31 by elaachac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-t_var		check_convert(const	char *str, t_var var, va_list arg)
+t_var	check_convert(const	char *str, t_var var, va_list arg)
 {
 	int		i;
 	int		c_char;
@@ -26,49 +38,52 @@ t_var		check_convert(const	char *str, t_var var, va_list arg)
 	}
 	else if (var.conv == 'p')
 	{
-		if ((tmp_str = ft_putmem(va_arg(arg, void *), var.isprec)) == NULL)
+		tmp_str = ft_putmem(va_arg(arg, void *), var.isprec);
+		if (tmp_str == NULL)
 		{
 			var.total_len = -1;
-			return(var);
+			return (var);
 		}
 		var.total_len += ft_display(tmp_str, var);
 	}
 	else if (var.conv == 'd' || var.conv == 'i')
 	{
-		if ((tmp_str = ft_itoa(va_arg(arg, int))) == NULL)
-			{
-				var.total_len = -1;
-				return(var);
-			}
+		tmp_str = ft_itoa(va_arg(arg, int));
+		if (tmp_str == NULL)
+		{
+			var.total_len = -1;
+			return (var);
+		}
 		var.total_len += ft_display_diux(tmp_str, var);
 	}
 	else if (var.conv == 'u')
 	{
-		if ((tmp_str = ft_itoa_ui(va_arg(arg, int))) == NULL)
-			{
-				var.total_len = -1;
-				return(var);
-			}
+		tmp_str = ft_itoa_ui(va_arg(arg, int));
+		if (tmp_str == NULL)
+		{
+			var.total_len = -1;
+			return (var);
+		}
 		var.total_len += ft_display_diux(tmp_str, var);
 	}
 	else if (var.conv == 'x')
 	{
-		if ((tmp_str = ft_convert_hexa((unsigned int)va_arg(arg, int), 0))
- == NULL)
-			{
-				var.total_len = -1;
-				return(var);
-			}
+		tmp_str = ft_convert_hexa((unsigned int)va_arg(arg, int), 0);
+		if (tmp_str == NULL)
+		{
+			var.total_len = -1;
+			return (var);
+		}
 		var.total_len += ft_display_diux(tmp_str, var);
 	}
 	else if (var.conv == 'X')
 	{
-		if ((tmp_str = ft_convert_hexa((unsigned int)va_arg(arg, int), 1))
- == NULL)
-			{
-				var.total_len = -1;
-				return(var);
-			}
+		tmp_str = ft_convert_hexa((unsigned int)va_arg(arg, int), 1);
+		if (tmp_str == NULL)
+		{
+			var.total_len = -1;
+			return (var);
+		}
 		var.total_len += ft_display_diux(tmp_str, var);
 	}
 	else if (var.conv == '%')

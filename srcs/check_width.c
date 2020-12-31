@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_width.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/30 16:34:56 by elaachac          #+#    #+#             */
+/*   Updated: 2020/12/30 16:34:58 by elaachac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 t_var	check_width(const char *str, t_var var, va_list arg)
 {
-	int i;
-	int y;
-
+	int	i;
+	int	y;
 
 	y = 0;
 	var.iszero = FALSE;
@@ -17,9 +28,7 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 		while (var.identifier[y])
 		{
 			if (str[i] == var.identifier[y])
-			{
 				return (var);
-			}
 			y++;
 		}	
 		if (str[i] == '0')

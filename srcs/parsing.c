@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/30 16:25:19 by elaachac          #+#    #+#             */
+/*   Updated: 2020/12/30 16:44:51 by elaachac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 t_var	parsing(const char *str, t_var var, va_list arg)
@@ -13,7 +25,7 @@ t_var	parsing(const char *str, t_var var, va_list arg)
 	}
 	if (var.errorprec == TRUE && var.conv == 's')
 	{
-			va_arg(arg, char *);
+		va_arg(arg, char *);
 		if (var.width > 0)
 		{
 			var.total_len += ft_display("", var);

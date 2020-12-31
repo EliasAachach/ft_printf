@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_precision.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/30 16:45:51 by elaachac          #+#    #+#             */
+/*   Updated: 2020/12/30 16:45:52 by elaachac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-t_var		check_precision(const char *str,
-t_var var, va_list arg)
+t_var	check_precision(const char *str, t_var var, va_list arg)
 {
-	int i;
-	int y;
+	int	i;
+	int	y;
 
 	y = 0;
 	i = var.index;
@@ -34,7 +45,9 @@ t_var var, va_list arg)
 			{
 				if (str[i + 1] == var.identifier[y])
 				{
-					if (var.identifier[y] == 'd' || var.identifier[y] == 'i' ||  var.identifier[y] == 'u' ||  var.identifier[y] == 'x' ||  var.identifier[y] == 'X')
+					if (var.identifier[y] == 'd' || var.identifier[y] == 'i'
+						|| var.identifier[y] == 'u' || var.identifier[y] == 'x'
+						|| var.identifier[y] == 'X')
 					{
 						var.diux = TRUE;
 					}
