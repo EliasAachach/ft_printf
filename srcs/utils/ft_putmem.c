@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 12:37:05 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/03 12:37:06 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/03 16:59:15 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,26 @@ int	ft_nbrlen_mem(unsigned long long int nbr)
 	return (len);
 }
 
-char	*ft_mem_hexa_end(unsigned long long int *nbr, \
+char	*ft_mem_hexa_end(unsigned long long int nbr, \
 			unsigned long long int	final_len, char *nbr_final, \
-			unsigned long long int	*tmp)
+			unsigned long long int	tmp)
 {
-	int	q;
-	int	r;
+	unsigned long long int	q;
+	unsigned long long int	r;
 
-	if (!(*nbr < 16))
+	q = 0;
+	r = 0;
+	if (!(nbr < 16))
 	{
-		q = *nbr / 16;
-		r = *nbr % 16;
+		q = nbr / 16;
+		r = nbr % 16;
 		convert_mem(r, nbr_final, final_len);
 		final_len--;
 		while (q >= 16)
 		{
-			*tmp = q;
-			q = *tmp / 16;
-			r = *tmp % 16;
+			tmp = q;
+			q = tmp / 16;
+			r = tmp % 16;
 			convert_mem(r, nbr_final, final_len);
 			final_len--;
 		}
@@ -79,7 +81,7 @@ char	*ft_mem_hexa(unsigned long long int nbr)
 		convert_mem(nbr, nbr_final, final_len);
 	if (nbr < 16)
 		return (nbr_final);
-	return (ft_mem_hexa_end(&nbr, final_len, nbr_final, &tmp));
+	return (ft_mem_hexa_end(nbr, final_len, nbr_final, tmp));
 }
 
 char	*ft_strjoin(char *s1, char *s2)
