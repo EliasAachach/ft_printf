@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   convert_mem.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/03 12:39:59 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/03 12:41:26 by elaachac         ###   ########.fr       */
+/*   Created: 2021/01/02 17:41:50 by elaachac          #+#    #+#             */
+/*   Updated: 2021/01/03 12:14:01 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *str)
+void	convert_mem(unsigned long long int nbr, char *nbr_final, \
+			 unsigned long long int final_len)
 {
-	int	i;
+	unsigned long long int	i;
+	char					*base;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	base = "0123456789abcdef";
+	nbr_final[final_len] = base[nbr];
 }

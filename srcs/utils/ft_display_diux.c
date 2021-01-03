@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_display_diux.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/02 14:48:46 by elaachac          #+#    #+#             */
+/*   Updated: 2021/01/02 16:51:49 by elaachac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_display_diux(char *str, t_var var)
+int	ft_display_diux(char *str, t_var var)
 {
-	int is_prec_neg;
-	int is_nbr_neg;
-	int len;
-	int i;
-	int y;
-	int j;
+	int	is_prec_neg;
+	int	is_nbr_neg;
+	int	i;
+	int	y;
+	int	j;
 
 	is_prec_neg = FALSE;
 	is_nbr_neg = FALSE;
-	len = ft_strlen(str);
+	var.len = ft_strlen(str);
 	i = 0;
 	y = 0;
 	j = 0;
@@ -22,23 +33,16 @@ int ft_display_diux(char *str, t_var var)
 		is_prec_neg = TRUE;
 		var.prec = 1;
 	}
-	if (len == 1 && str[0] == '0' && var.prec == 0 && var.isprec == TRUE)
+	if (var.len == 1 && str[0] == '0' && var.prec == 0 && var.isprec == TRUE)
 	{
 		if (var.width > 0)
-		{
 			var.prec = -1;
-		}
 		else
-		{
 			return (0);
-		}
-		
 	}
 	if (var.isprec == TRUE && (var.prec >= 0 || var.errorprec == TRUE))
-	{
 		var.zero_space = ' ';
-	}
-	if (var.prec == -1 && len == 1 && str[0] == '0')
+	if (var.prec == -1 && var.len == 1 && str[0] == '0')
 	{
 		if (var.width > 0)
 		{
@@ -51,41 +55,32 @@ int ft_display_diux(char *str, t_var var)
 	}
 	if (var.right == TRUE)
 		var.zero_space = ' ';
-	if (var.diux == TRUE && len == 1 && str[0] == '0' && var.isprec == TRUE && var.width > 0 && var.right == FALSE)
-	{
+	if (var.diux == TRUE && var.len == 1
+		&& str[0] == '0' && var.isprec == TRUE
+		&& var.width > 0 && var.right == FALSE)
 		var.width++;
-	}
-	if (str == NULL)
-	{
-		i = ft_display("(null)", var);
-		return (i);
-	}
-	if (len > var.prec && var.prec > 0)
+	if (var.len > var.prec && var.prec > 0)
 	{
 		if (var.right == FALSE)
 		{
-			if (is_prec_neg == FALSE || (var.width > var.prec && var.iszero == FALSE))
+			if (is_prec_neg == FALSE
+				|| (var.width > var.prec && var.iszero == FALSE))
 				var.zero_space = ' ';
 			else
 				var.zero_space = '0';
-			while (y < var.width - len)
+			while (y < var.width - var.len)
 			{
-				if (is_nbr_neg == TRUE && var.iszero == TRUE && is_prec_neg == TRUE)
-				{
+				if (is_nbr_neg == TRUE && var.iszero == TRUE
+					&& is_prec_neg == TRUE)
 					i += ft_putchar('-');
-				}
 				y += ft_putchar(var.zero_space);
 			}
 		}
-		if (var.diux == TRUE && len == 1 && str[0] == '0' && var.isprec == TRUE)
-		{
+		if (var.diux == TRUE && var.len == 1 && str[0] == '0'
+			&& var.isprec == TRUE)
 			str[0] = '\0';
-		}
-			while (str[i])
-			{
-				ft_putchar(str[i]);
-				i++;
-			}
+		while (str[i])
+			i += ft_putchar(str[i]);
 	}
 	else
 	{
@@ -94,13 +89,11 @@ int ft_display_diux(char *str, t_var var)
 			var.total_len += ft_putchar(str[i]);
 			i++;
 			if (var.width > 0 && var.prec > 0)
-			{
-				len--;
-			}
+				var.len--;
 		}
 		if (var.right == FALSE)
 		{
-			if (var.width > len)
+			if (var.width > var.len)
 			{
 				if (var.prec > 0)
 				{
@@ -113,38 +106,28 @@ int ft_display_diux(char *str, t_var var)
 						y += ft_putchar(var.zero_space);
 				}
 				else
-					while (y < var.width - len)
+					while (y < var.width - var.len)
 						y += ft_putchar(var.zero_space);
-				
 			}
 		}
 		if (is_nbr_neg == TRUE)
 		{
 			var.total_len += ft_putchar(str[i]);
 			i++;
-			len--;
+			var.len--;
 		}
-		while(j < var.prec - len)
-		{
+		while (j < var.prec - var.len)
 			j += ft_putchar('0');
-		}
-		if (var.diux == TRUE && len == 1 && str[0] == '0' && var.isprec == TRUE)
-		{
+		if (var.diux == TRUE && var. len == 1 && str[0] == '0'
+			&& var.isprec == TRUE)
 			str[0] = '\0';
-		}
-			while (str[i])
-			{
-				ft_putchar(str[i]);
-				i++;
-			}
+		while (str[i])
+			i += ft_putchar(str[i]);
 	}
 	if (var.right == TRUE)
 	{
 		while (y < var.width - i - j)
-		{
-			ft_putchar(var.zero_space);
-			y++;
-		}
+			y += ft_putchar(var.zero_space);
 	}
 	return (i + y + j);
 }

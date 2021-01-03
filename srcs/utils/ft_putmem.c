@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putmem.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/03 12:37:05 by elaachac          #+#    #+#             */
+/*   Updated: 2021/01/03 12:37:06 by elaachac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_nbrlen_mem(unsigned long long int nbr)
+int	ft_nbrlen_mem(unsigned long long int nbr)
 {
-	int len;
-	unsigned long long int n;
+	int						len;
+	unsigned long long int	n;
 
 	len = 0;
 	n = nbr;
@@ -19,15 +31,31 @@ int ft_nbrlen_mem(unsigned long long int nbr)
 	return (len);
 }
 
-void	convert_mem(unsigned long long int nbr, char *nbr_final,\
-			unsigned long long int final_len)
+char	*ft_mem_hexa_end(unsigned long long int *nbr, \
+			unsigned long long int	final_len, char *nbr_final, \
+			unsigned long long int	*tmp)
 {
-	unsigned long long int i;
-	char *base;
+	int	q;
+	int	r;
 
-	i = 0;
-	base = "0123456789abcdef";
-	nbr_final[final_len] = base[nbr];
+	if (!(*nbr < 16))
+	{
+		q = *nbr / 16;
+		r = *nbr % 16;
+		convert_mem(r, nbr_final, final_len);
+		final_len--;
+		while (q >= 16)
+		{
+			*tmp = q;
+			q = *tmp / 16;
+			r = *tmp % 16;
+			convert_mem(r, nbr_final, final_len);
+			final_len--;
+		}
+		convert_mem(q, nbr_final, final_len);
+		final_len--;
+	}
+	return (nbr_final);
 }
 
 char	*ft_mem_hexa(unsigned long long int nbr)
@@ -36,39 +64,22 @@ char	*ft_mem_hexa(unsigned long long int nbr)
 	unsigned long long int	r;
 	unsigned long long int	tmp;
 	unsigned long long int	final_len;
-	char			*nbr_final;
+	char					*nbr_final;
 
 	q = 0;
 	r = 0;
 	tmp = 0;
 	final_len = ft_nbrlen_mem(nbr);
-	if (!(nbr_final = (char *)malloc(sizeof(char) * (final_len + 1))))
+	nbr_final = (char *)malloc(sizeof(char) * (final_len + 1));
+	if (!(nbr_final))
 		return (NULL);
 	nbr_final[final_len] = '\0';
 	final_len--;
 	if (nbr < 16)
-	{
 		convert_mem(nbr, nbr_final, final_len);
+	if (nbr < 16)
 		return (nbr_final);
-	}
-	else
-	{
-		q = nbr / 16;
-		r = nbr % 16;
-		convert_mem(r, nbr_final, final_len);
-		final_len--;
-		while (q >= 16)
-		{
-			tmp = q;
-			q = tmp / 16;
-			r = tmp % 16;
-			convert_mem(r, nbr_final, final_len);
-			final_len--;
-		}
-		convert_mem(q, nbr_final, final_len);
-		final_len--;
-	}
-	return (nbr_final);
+	return (ft_mem_hexa_end(&nbr, final_len, nbr_final, &tmp));
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -92,18 +103,19 @@ char	*ft_strjoin(char *s1, char *s2)
 
 char	*ft_putmem(void *addr, int isprec)
 {
-    char *str;
-    char *ret;
+	char	*str;
+	char	*ret;
 
-	
 	if (addr == NULL && isprec == TRUE)
 	{
-		if (!(ret = ft_strjoin("0x", "")))
+		ret = ft_strjoin("0x", "");
+		if (!(ret))
 			return (NULL);
-			return (ret);
+		return (ret);
 	}
-    str = ft_mem_hexa((unsigned long long int)addr);
-    if (!(ret = ft_strjoin("0x", str)))
-        return (NULL);
+	str = ft_mem_hexa((unsigned long long int)addr);
+	ret = ft_strjoin("0x", str);
+	if (!(ret))
+		return (NULL);
 	return (ret);
 }

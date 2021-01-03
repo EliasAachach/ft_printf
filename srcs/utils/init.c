@@ -6,13 +6,15 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 15:17:05 by elaachac          #+#    #+#             */
-/*   Updated: 2020/12/24 16:02:00 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/03 12:41:05 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-t_var   init(t_var var)
+
+t_var	init(t_var var)
 {
+	var.len = 0;
 	var.conv = 0;
 	var.right = 0;
 	var.prec = 0;
@@ -25,5 +27,5 @@ t_var   init(t_var var)
 	var.errorprec = 0;
 	var.iszero = 0;
 	var.identifier = "cspdiuxX%";
-    return(var);
+	return (var);
 }
