@@ -8,11 +8,11 @@ int	main()
 	
 //	printf("\nc : %d", ft_printf(" -%-2c* -%2c* ", 0, 0));
 //	printf("\nc : %d\n", printf("\n -%-2c* -%2c* ", 0, 0) - 1);
-//	printf("\ns : %d\n", ft_printf("{%.*s}{%.*s}", 0, "4567", 0, "1238"));
-//	printf("\ns : %d\n", printf("\n{%.*s}{%.*s}", 0, "4567", 0, "1238") - 1);
+	printf("\ns : %d\n", ft_printf("{%p}", &i));
+	printf("\ns : %d\n", printf("\n{%p}", &i) - 1);
 //	printf("\np : %d", ft_printf("%--182.%%1c%055.7u" ,48,987889311u));
-	printf("\np : %d", ft_printf("%010as%"));
-	printf("\np : %d", printf("\n%010as%"));
+//	printf("\np : %d", ft_printf("%010as%"));
+//	printf("\np : %d", printf("\n%010as%"));
 //	printf("\nd : %d", ft_printf("%09.0d", uintmax));
 //	printf("\nd : %d\n", printf("\n%09.0d", uintmax) - 1);
 //	printf("\nd : %d", ft_printf("*%-5.d*", 0) - 2);

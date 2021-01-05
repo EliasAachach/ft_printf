@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 01:27:46 by elaachac          #+#    #+#             */
-/*   Updated: 2020/12/24 16:02:27 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/03 12:55:31 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_var
 	int			diux;
 	int			errorprec;
 	int			iszero;
+	int			len;
 	char		*identifier;
 }				t_var;
 
@@ -60,4 +61,6 @@ int				ft_display_diux(char	*str, t_var var);
 int				ft_strlen(char	*str);
 int				ft_putnbr(int nbr);
 int				ft_putnbr_ui(unsigned int nbr);
+void			convert_mem(unsigned long long int nbr, char *nbr_final, \
+					unsigned long long int final_len);
 #endif

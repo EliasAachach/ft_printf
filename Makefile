@@ -6,7 +6,7 @@
 #    By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/24 14:08:36 by elaachac          #+#    #+#              #
-#    Updated: 2020/12/30 15:34:53 by elaachac         ###   ########.fr        #
+#    Updated: 2021/01/03 11:54:02 by elaachac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ FILES =		./srcs/ft_printf\
 			./srcs/utils/ft_nbrlen_hexa\
 			./srcs/utils/ft_putchar\
 			./srcs/utils/ft_putmem\
+			./srcs/utils/convert_mem\
 			./srcs/utils/ft_putnbr\
 			./srcs/utils/ft_putnbr_ui\
 			./srcs/utils/ft_putstr\
