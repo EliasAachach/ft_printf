@@ -6,11 +6,32 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/02 14:48:46 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/02 16:51:49 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/07 00:43:51 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	setup_funct(char *str, t_var *var, int *is_nbr_neg, int *is_prec_neg)
+{
+	if (str[0] == '-')
+		*is_nbr_neg = TRUE;
+	if (var->prec < 0 && var->errorprec == FALSE)
+	{
+		*is_prec_neg = TRUE;
+		var->prec = 1;
+	}
+	if (var->len == 1 && str[0] == '0' && var->prec == 0 && var->isprec == TRUE)
+	{
+		if (var->width > 0)
+			var->prec = -1;
+		else
+			return (1);
+	}
+	if (var->isprec == TRUE && (var->prec >= 0 || var->errorprec == TRUE))
+		var->zero_space = ' ';
+	return (0);
+}
 
 int	ft_display_diux(char *str, t_var var)
 {
@@ -26,22 +47,8 @@ int	ft_display_diux(char *str, t_var var)
 	i = 0;
 	y = 0;
 	j = 0;
-	if (str[0] == '-')
-		is_nbr_neg = TRUE;
-	if (var.prec < 0 && var.errorprec == FALSE)
-	{
-		is_prec_neg = TRUE;
-		var.prec = 1;
-	}
-	if (var.len == 1 && str[0] == '0' && var.prec == 0 && var.isprec == TRUE)
-	{
-		if (var.width > 0)
-			var.prec = -1;
-		else
-			return (0);
-	}
-	if (var.isprec == TRUE && (var.prec >= 0 || var.errorprec == TRUE))
-		var.zero_space = ' ';
+	if (setup_funct(str, &var, &is_nbr_neg, &is_prec_neg) == 1)
+		return (0);
 	if (var.prec == -1 && var.len == 1 && str[0] == '0')
 	{
 		if (var.width > 0)

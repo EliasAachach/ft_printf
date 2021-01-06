@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 01:27:46 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/03 12:55:31 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/05 18:30:44 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_var
 	int			errorprec;
 	int			iszero;
 	int			len;
+	int			is_nbr_neg;
+	int			is_prec_neg;
 	char		*identifier;
 }				t_var;
 

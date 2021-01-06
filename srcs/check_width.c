@@ -6,11 +6,51 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 16:34:56 by elaachac          #+#    #+#             */
-/*   Updated: 2020/12/30 16:34:58 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/06 16:15:09 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	check_nbr(t_var *var, const char *str, int *i)
+{
+	if (str[*i] >= '0' && str[*i] <= '9')
+	{
+		var->width = ft_atoi(str + *i);
+		var->index = *i;
+		return (1);
+	}
+	if (var->width > 0)
+		return (1);
+	return (0);
+}
+
+void	check_star(t_var *var, const char *str, int *i, va_list arg)
+{
+	if (str[*i] == '*')
+	{
+		var->width = va_arg(arg, int);
+		if (var->width < 0)
+		{
+			var->width = -var->width;
+			var->right = TRUE;
+		}
+	}
+}
+
+int	check_zero(t_var *var, const char *str, int *i)
+{	
+	if (str[*i] == '0')
+	{
+		var->zero_space = '0';
+		var->iszero = TRUE;
+		while (str[*i] == '0')
+			*i = *i + 1;
+		if (str[*i] == '.')
+			return (1);
+	}
+	return (0);
+}
 
 t_var	check_width(const char *str, t_var var, va_list arg)
 {
@@ -30,34 +70,11 @@ t_var	check_width(const char *str, t_var var, va_list arg)
 			if (str[i] == var.identifier[y])
 				return (var);
 			y++;
-		}	
-		if (str[i] == '0')
-		{
-			var.zero_space = '0';
-			var.iszero = TRUE;
-			while (str[i] == '0')
-			{
-				i++;
-			}
-			if (str[i] == '.')
-				return (var);
 		}
-		if (str[i] == '*')
-		{
-			var.width = va_arg(arg, int);
-			if (var.width < 0)
-			{
-				var.width = -var.width;
-				var.right = TRUE;
-			}
-		}
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			var.width = ft_atoi(str + i);
-			var.index = i;
+		if (check_zero(&var, str, &i) == 1)
 			return (var);
-		}
-		if (var.width > 0)
+		check_star(&var, str, &i, arg);
+		if (check_nbr(&var, str, &i) == 1)
 			return (var);
 		i++;
 	}

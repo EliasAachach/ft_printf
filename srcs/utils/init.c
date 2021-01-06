@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 15:17:05 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/03 12:41:05 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/06 14:56:34 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ t_var	init(t_var var)
 	var.diux = 0;
 	var.errorprec = 0;
 	var.iszero = 0;
+	var.is_nbr_neg = 0;
+	var.is_prec_neg = 0;
 	var.identifier = "cspdiuxX%";
 	return (var);
 }

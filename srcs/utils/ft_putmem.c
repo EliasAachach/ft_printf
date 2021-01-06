@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 12:37:05 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/03 16:59:15 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/06 19:47:24 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,13 @@ char	*ft_putmem(void *addr, int isprec)
 		return (ret);
 	}
 	str = ft_mem_hexa((unsigned long long int)addr);
+	if (!(str))
+		return (NULL);
 	ret = ft_strjoin("0x", str);
 	if (!(ret))
+	{
+		free(str);
 		return (NULL);
+	}
 	return (ret);
 }
