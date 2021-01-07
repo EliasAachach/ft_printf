@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 01:27:46 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/05 18:30:44 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/07 03:03:11 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ t_var			wich_convert(const	char	*str, t_var var);
 char			*ft_putmem(void	*addr, int isprec);
 char			*ft_itoa(int nbr);
 char			*ft_itoa_ui(unsigned int nbr);
-int				ft_printf(const	char	*str, ...);
 char			*ft_convert_hexa(unsigned int nbr, int maj);
+int				ft_printf(const	char	*str, ...);
 int				ft_nbrlen_hexa(unsigned int nbr);
 int				ft_putchar(char	c);
 int				ft_putstr(char	*str);
@@ -63,6 +63,9 @@ int				ft_display_diux(char	*str, t_var var);
 int				ft_strlen(char	*str);
 int				ft_putnbr(int nbr);
 int				ft_putnbr_ui(unsigned int nbr);
+int				setup_funct(char *str, t_var *var);
+int				setup2_funct(t_var *var, char *str);
+void			end_display(t_var *var, int *i, int *y, int *j);
 void			convert_mem(unsigned long long int nbr, char *nbr_final, \
 					unsigned long long int final_len);
 #endif
