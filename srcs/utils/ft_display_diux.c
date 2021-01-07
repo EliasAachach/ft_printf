@@ -64,7 +64,7 @@ void	sec_display(t_var *var, char *str, int *i, int *y)
 	}
 }
 
-int	third_display(t_var *var, char *str, int *i, int *y)
+int		third_display(t_var *var, char *str, int *i, int *y)
 {
 	int	j;
 
@@ -80,7 +80,7 @@ int	third_display(t_var *var, char *str, int *i, int *y)
 		}
 		while (j < var->prec - var->len)
 			j += ft_putchar('0');
-		if (var->diux == TRUE && var-> len == 1 && str[0] == '0'
+		if (var->diux == TRUE && var->len == 1 && str[0] == '0'
 			&& var->isprec == TRUE)
 			str[0] = '\0';
 		while (str[*i])
@@ -89,7 +89,7 @@ int	third_display(t_var *var, char *str, int *i, int *y)
 	return (j);
 }
 
-int	ft_display_diux(char *str, t_var var)
+int		ft_display_diux(char *str, t_var var)
 {
 	int	i;
 	int	y;

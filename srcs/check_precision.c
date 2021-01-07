@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	is_star(t_var *var, const char *str, int *i)
+int		is_star(t_var *var, const char *str, int *i)
 {
 	if (!(str[*i + 1] == '*'))
 	{
@@ -28,7 +28,7 @@ int	is_star(t_var *var, const char *str, int *i)
 	return (0);
 }
 
-int	is_dot(t_var *var, const char *str, va_list arg, int *i)
+int		is_dot(t_var *var, const char *str, va_list arg, int *i)
 {
 	int	y;
 

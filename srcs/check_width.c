@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	check_nbr(t_var *var, const char *str, int *i)
+int		check_nbr(t_var *var, const char *str, int *i)
 {
 	if (str[*i] >= '0' && str[*i] <= '9')
 	{
@@ -38,8 +38,8 @@ void	check_star(t_var *var, const char *str, int *i, va_list arg)
 	}
 }
 
-int	check_zero(t_var *var, const char *str, int *i)
-{	
+int		check_zero(t_var *var, const char *str, int *i)
+{
 	if (str[*i] == '0')
 	{
 		var->zero_space = '0';

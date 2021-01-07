@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_nbrlen_ui(unsigned int nbr, unsigned int unbr)
+int		ft_nbrlen_ui(unsigned int nbr, unsigned int unbr)
 {
 	int	len;
 

@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	setup_funct(char *str, t_var *var)
+int		setup_funct(char *str, t_var *var)
 {
 	if (str[0] == '-')
 		var->is_nbr_neg = TRUE;
@@ -33,7 +33,7 @@ int	setup_funct(char *str, t_var *var)
 	return (0);
 }
 
-int	setup2_funct(t_var *var, char *str)
+int		setup2_funct(t_var *var, char *str)
 {
 	if (var->prec == -1 && var->len == 1 && str[0] == '0')
 	{

@@ -23,23 +23,23 @@
 # define WIDTH 0
 # define ZERO_SPACE 1
 
-typedef struct s_var
+typedef struct	s_var
 {
-	int			right;
-	int			prec;
-	int			width;
-	int			zero_space;
-	int			total_len;
-	int			index;
-	int			conv;
-	int			isprec;
-	int			diux;
-	int			errorprec;
-	int			iszero;
-	int			len;
-	int			is_nbr_neg;
-	int			is_prec_neg;
-	char		*identifier;
+	int		right;
+	int		prec;
+	int		width;
+	int		zero_space;
+	int		total_len;
+	int		index;
+	int		conv;
+	int		isprec;
+	int		diux;
+	int		errorprec;
+	int		iszero;
+	int		len;
+	int		is_nbr_neg;
+	int		is_prec_neg;
+	char	*identifier;
 }				t_var;
 
 t_var			init(t_var var);

@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_nbrlen_mem(unsigned long long int nbr)
+int		ft_nbrlen_mem(unsigned long long int nbr)
 {
 	int						len;
 	unsigned long long int	n;
@@ -31,9 +31,9 @@ int	ft_nbrlen_mem(unsigned long long int nbr)
 	return (len);
 }
 
-char	*ft_mem_hexa_end(unsigned long long int nbr, \
-			unsigned long long int	final_len, char *nbr_final, \
-			unsigned long long int	tmp)
+char	*ft_mem_hexa_end(unsigned long long int nbr,\
+			unsigned long long int final_len, char *nbr_final,\
+			unsigned long long int tmp)
 {
 	unsigned long long int	q;
 	unsigned long long int	r;

@@ -36,7 +36,7 @@ void	start_check(t_var *var, va_list arg)
 	}
 }
 
-int	pdi_check(t_var *var, va_list arg)
+int		pdi_check(t_var *var, va_list arg)
 {
 	char	*tmp_str;
 
@@ -65,7 +65,7 @@ int	pdi_check(t_var *var, va_list arg)
 	return (0);
 }
 
-int	end_convert(t_var *var, va_list arg)
+int		end_convert(t_var *var, va_list arg)
 {
 	char	*tmp_str;
 
