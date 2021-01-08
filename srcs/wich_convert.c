@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 16:46:31 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/05 02:57:00 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/08 13:15:24 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ t_var	wich_convert(const	char *str, t_var var)
 			var.index = i;
 			return (var);
 		}
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+			{
+				var.total_len += ft_putchar(str[i]);
+				return (var);
+			}
 		i++;
 	}
 	return (var);
