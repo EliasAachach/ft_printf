@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 16:46:31 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/08 17:04:45 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/08 17:06:19 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int		ft_isalpha(int c, t_var *var)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 	{
 		var->total_len += ft_putchar(c);
 		return (1);
 	}
 	else
-        return (0);
+		return (0);
 }
 
 t_var	wich_convert(const	char *str, t_var var)
