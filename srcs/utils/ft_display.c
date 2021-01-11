@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/02 14:04:27 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/02 14:27:32 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/11 04:12:12 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,17 @@ int	display_bis(t_var *var, int *i, int *y, char *str)
 		}
 		if (str[*i] == 0 && var->conv == 'c')
 			*i += ft_putchar(str[*i]);
+
 		while (str[*i])
 			*i += ft_putchar(str[*i]);
+		if (str[*i] == '\0' && var->conv == 'p')
+			{
+				while (var->prec > 0)
+				{
+					*y += ft_putchar('0');
+					var->prec--;
+				}
+			}
 	}
 	if (var->right == TRUE)
 	{

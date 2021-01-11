@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 16:34:56 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/06 16:15:09 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/11 13:20:49 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		check_nbr(t_var *var, const char *str, int *i)
 		var->index = *i;
 		return (1);
 	}
-	if (var->width > 0)
+	if (var->width > 0 && str[*i] != '*')
 		return (1);
 	return (0);
 }
