@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 16:46:31 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/10 20:18:28 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/11 13:42:06 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		special_case(t_var *var, const char *str, int i)
 	}
 	return (0);
 }
+
 t_var	wich_convert(const	char *str, t_var var)
 {
 	int	i;
