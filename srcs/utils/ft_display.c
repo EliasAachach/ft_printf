@@ -6,13 +6,22 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/02 14:04:27 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/11 04:12:12 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/11 13:53:47 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	display_bis(t_var *var, int *i, int *y, char *str)
+void	spec_case(t_var *var, int *y)
+{
+	while (var->prec > 0)
+	{
+		*y += ft_putchar('0');
+		var->prec--;
+	}
+}
+
+int		display_bis(t_var *var, int *i, int *y, char *str)
 {
 	if (!(var->len > var->prec && var->prec > 0))
 	{
@@ -23,17 +32,10 @@ int	display_bis(t_var *var, int *i, int *y, char *str)
 		}
 		if (str[*i] == 0 && var->conv == 'c')
 			*i += ft_putchar(str[*i]);
-
 		while (str[*i])
 			*i += ft_putchar(str[*i]);
 		if (str[*i] == '\0' && var->conv == 'p')
-			{
-				while (var->prec > 0)
-				{
-					*y += ft_putchar('0');
-					var->prec--;
-				}
-			}
+			spec_case(var, y);
 	}
 	if (var->right == TRUE)
 	{
@@ -47,7 +49,7 @@ int	display_bis(t_var *var, int *i, int *y, char *str)
 	return (*i + *y);
 }
 
-int	ft_display(char *str, t_var var)
+int		ft_display(char *str, t_var var)
 {
 	int	i;
 	int	y;
