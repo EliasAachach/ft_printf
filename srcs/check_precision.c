@@ -6,7 +6,7 @@
 /*   By: elaachac <elaachac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 16:45:51 by elaachac          #+#    #+#             */
-/*   Updated: 2021/01/11 17:30:48 by elaachac         ###   ########.fr       */
+/*   Updated: 2021/01/12 17:48:26 by elaachac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ int		is_star(t_var *var, const char *str, int *i)
 	return (0);
 }
 
-int		is_dot(t_var *var, const char *str, va_list arg, int *i)
+void	start_is_dot(t_var *var, const char *str, int *i, va_list arg)
 {
-	int	y;
-
-	y = 0;
 	if (str[*i + 1] == '*')
 		var->prec = va_arg(arg, int);
 	if (var->prec < 0)
@@ -40,6 +37,14 @@ int		is_dot(t_var *var, const char *str, va_list arg, int *i)
 		var->prec = 0;
 		var->isprec = FALSE;
 	}
+}
+
+int		is_dot(t_var *var, const char *str, va_list arg, int *i)
+{
+	int	y;
+
+	y = 0;
+	start_is_dot(var, str, i, arg);
 	while (var->identifier[y++])
 	{
 		if (str[*i + 1] == var->identifier[y])
